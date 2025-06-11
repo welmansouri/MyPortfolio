@@ -1,1 +1,27 @@
-<p>about works!</p>
+<div>
+    <p class="text-white font-mono ">
+        Développeuse Full Stack passionnée, je conçois des applications performantes, maintenables et évolutives. Mon
+        expertise se concentre sur les technologies Java / Spring Boot côté back-end et Angular / React côté front-end.
+        Avec plus de 2 ans d’expérience, j’ai travaillé sur des projets variés — de l’embarqué à la supervision
+        d’infrastructure, en passant par le web et le mobile. Curieuse, autonome et rigoureuse, je m’attache à écrire du
+        code propre, testé et documenté, tout en restant à l’écoute des besoins métiers. Aujourd’hui, je cherche à
+        rejoindre une équipe tech dynamique pour relever de nouveaux défis techniques.
+    </p>
+    <app-title text="Mon expertise" size="medium"></app-title>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div *ngFor="let value of values">
+            <app-card [text]="value.text" [icon]="value.icon" [title]="value.title"></app-card>
+        </div>
+    </div>
+    <app-title text="Mon univers tech" size="medium"></app-title>
+    <div  class="flex flex-row">
+    <div *ngFor="let tech of techs" class="w-30 h-30 opacity-40 bg-white rounded-2xl justify-between mx-auto">
+        <img mat-card-image [src]="tech.url" [alt]="tech.title">
+    </div>
+    </div>
+    <app-title text="Ce qu’on dit de moi" size="medium"></app-title>
+
+     <app-card text="cccccc" icon="cccccc" title="ccccc"  type="testimonials"></app-card>
+
+
+</div>
