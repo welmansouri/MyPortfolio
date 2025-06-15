@@ -1,8 +1,9 @@
 <div class="flex flex-wrap gap-4 ">
-  <div *ngIf="type != 'testimonials'" class="flex  w-full bg-slate-700 bg-opacity-10 rounded-xl  shadow-md shadow-slate-500/50 p-6">
-    
+  <div *ngIf="type != 'testimonials'"
+    class="flex  w-full bg-slate-700 bg-opacity-10 rounded-xl  shadow-md shadow-slate-500/50 p-6">
+
     <div class=" w-20 h-20  grid text-2xl font-extrabold  text-yellow-600 rounded-xl mr-4">
-      <mat-icon  fontSet="fas" [fontIcon]="icon"></mat-icon>
+      <mat-icon fontSet="fas" [fontIcon]="icon"></mat-icon>
     </div>
     <div class="flex flex-col">
       <div class="text-white font-bold text-xl">
@@ -18,27 +19,28 @@
 
 
 
-  <div *ngIf="type == 'testimonials'" class=" w-full bg-slate-700 bg-opacity-10 rounded-xl  shadow-md shadow-slate-500/50 p-6">
-        <div class="flex flex-row">
+  <div *ngIf="type == 'testimonials'"
+    class=" w-full bg-slate-700 bg-opacity-10 rounded-xl  shadow-md shadow-slate-500/50 p-6">
+    <div class="flex flex-row">
 
-    <div class=" w-15 h-15  grid font-extrabold  bg-white rounded-xl mr-4">
-            <img mat-card-image [src]="icon" alt="Profile Icon">
-    </div>
-    <div class="flex flex-col">
-      <div class="text-white font-bold text-3xl">
-        {{ title }}
+      <div class=" w-15 h-15  grid font-extrabold  bg-white rounded-xl mr-4">
+        <img mat-card-image [src]="icon" alt="Profile Icon">
       </div>
-      <div class="text-xs text-slate-400">
-        {{ subTitle }}
+      <div class="flex flex-col">
+        <div class="text-white font-bold text-3xl">
+          {{ title }}
+        </div>
+        <div class="text-xs text-slate-400">
+          {{ subTitle }}
+        </div>
       </div>
     </div>
+
+    <div>
+      <p>
+        {{ text }}
+      </p>
     </div>
-  
-     <div>
-        <p>
-                    {{ text }}
-        </p>
-     </div>
 
   </div>
 </div>

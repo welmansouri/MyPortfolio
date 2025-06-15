@@ -10,7 +10,7 @@
     <app-spacer size="lg"></app-spacer>
 
     <app-title text="Mon expertise" size="medium"></app-title>
-            <app-spacer size="sm"></app-spacer>
+    <app-spacer size="sm"></app-spacer>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div *ngFor="let value of values">
@@ -20,30 +20,33 @@
     <app-spacer size="lg"></app-spacer>
 
     <app-title text="Mon univers tech" size="medium"></app-title>
-            <app-spacer size="sm"></app-spacer>
+    <app-spacer size="sm"></app-spacer>
 
-    <div  class="flex flex-row">
-    <div *ngFor="let tech of techs" class="w-30 h-30 opacity-40 bg-white rounded-2xl justify-between mx-auto">
-        <img mat-card-image [src]="tech.url" [alt]="tech.title">
-    </div>
+    <div class="flex flex-row">
+        <div *ngFor="let tech of techs" class="w-30 h-30 opacity-40 bg-white rounded-2xl justify-between mx-auto">
+            <img mat-card-image [src]="tech.url" [alt]="tech.title">
+        </div>
     </div>
 
     <app-spacer size="lg"></app-spacer>
 
     <app-title text="Ce qu’on dit de moi" size="medium"></app-title>
-        <app-spacer size="sm"></app-spacer>
+    <app-spacer size="sm"></app-spacer>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-    <div *ngFor="let testimonial of testimonials" >
+        <div *ngFor="let testimonial of testimonials">
 
-     <app-card [text]="testimonial.text" [icon]="testimonial.icon" [title]="testimonial.title" [subTitle]="testimonial.subTitle"  type="testimonials"></app-card>
-    </div>
+            <app-card [text]="testimonial.text" [icon]="testimonial.icon" [title]="testimonial.title"
+                [subTitle]="testimonial.subTitle" type="testimonials"></app-card>
+        </div>
     </div>
 
     <app-spacer size="lg"></app-spacer>
 
-    <app-button text="Exporter le document de référence" icon="download" ></app-button>
+    <app-button text="Exporter le document de référence" icon="download"></app-button>
 
+
+    <app-popup text="hhhhhhhh" title="hhhhhhhhh" subTitle="hhhhhhh"></app-popup>
 
 </div>

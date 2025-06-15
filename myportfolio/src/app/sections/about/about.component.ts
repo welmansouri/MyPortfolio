@@ -4,9 +4,10 @@ import { CardComponent } from '../../components/card/card.component';
 import { CommonModule } from '@angular/common';
 import { ButtonComponent } from '../../components/button/button.component';
 import { SpacerComponent } from '../../components/spacer/spacer.component';
+import { PopupComponent } from '../../components/popup/popup.component';
 @Component({
   selector: 'app-about',
-  imports: [TitleComponent,CardComponent,CommonModule,ButtonComponent,SpacerComponent],
+  imports: [TitleComponent,CardComponent,CommonModule,ButtonComponent,SpacerComponent,PopupComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css'
 })
