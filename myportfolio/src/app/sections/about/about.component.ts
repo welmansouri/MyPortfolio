@@ -2,13 +2,15 @@ import { Component,Input } from '@angular/core';
 import { TitleComponent } from '../../components/title/title.component';
 import { CardComponent } from '../../components/card/card.component';
 import { CommonModule } from '@angular/common';
-
+import { ButtonComponent } from '../../components/button/button.component';
+import { SpacerComponent } from '../../components/spacer/spacer.component';
 @Component({
   selector: 'app-about',
-  imports: [TitleComponent,CardComponent,CommonModule],
+  imports: [TitleComponent,CardComponent,CommonModule,ButtonComponent,SpacerComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css'
 })
+
 export class AboutComponent {
     values: { title: string; text: string; icon: string }[] = [
     {
@@ -50,6 +52,21 @@ export class AboutComponent {
       title: 'Java',
       url: '/img/techs/java-logo-vector-1.svg',
     }
+  ];
+
+     testimonials: { title: string; icon: string; subTitle: string; text: string;  }[] = [
+    {
+      title: 'Java',
+      icon: "/img/profile-icon.png" ,
+      subTitle:'hhh',
+      text:'hhhh'
+    },
+     {
+      title: 'Java',
+      icon:"/img/profile-icon.png" ,
+      subTitle:'hhhh',
+      text:'hhhh'
+    },
   ];
 
 }

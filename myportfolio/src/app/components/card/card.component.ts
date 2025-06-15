@@ -15,6 +15,7 @@ export class CardComponent {
   @Input() icon:string="";
   @Input() text:string="";
   @Input() type:string="";
+  @Input() subTitle:string="";
 
 
 
