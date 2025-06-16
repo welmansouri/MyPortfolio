@@ -1,4 +1,6 @@
-<div>
+
+
+<div class="z-30">
     <p class="text-white font-mono ">
         Développeuse Full Stack passionnée, je conçois des applications performantes, maintenables et évolutives. Mon
         expertise se concentre sur les technologies Java / Spring Boot côté back-end et Angular / React côté front-end.
@@ -35,7 +37,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-        <div *ngFor="let testimonial of testimonials">
+        <div *ngFor="let testimonial of testimonials" (click)="openModal(testimonial)">
 
             <app-card [text]="testimonial.text" [icon]="testimonial.icon" [title]="testimonial.title"
                 [subTitle]="testimonial.subTitle" type="testimonials"></app-card>
@@ -45,8 +47,5 @@
     <app-spacer size="lg"></app-spacer>
 
     <app-button text="Exporter le document de référence" icon="download"></app-button>
-
-
-    <app-popup text="hhhhhhhh" title="hhhhhhhhh" subTitle="hhhhhhh"></app-popup>
 
 </div>

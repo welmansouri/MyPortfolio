@@ -18,7 +18,14 @@
 <!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<div class="flex  w-full    ">
+<div class="flex  w-full ">
+  <div *ngIf="!showModal" class="fixed inset-0 z-40 bg-opacity-25 backdrop-blur-sm"></div>
+
+  <div *ngIf="!showModal" class="fixed inset-0 z-40 flex items-center justify-center ">
+    <div class="w-[70%]">
+      <app-popup text="hhhhhhhh" title="hhhhhhhhh" subTitle="hhhhhhh"></app-popup>
+    </div>
+  </div>
   <div class="w-1/5 mr-4 h-[90%] fixed">
     <app-profile></app-profile>
   </div>

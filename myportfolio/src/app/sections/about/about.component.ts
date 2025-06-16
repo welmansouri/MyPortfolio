@@ -13,6 +13,10 @@ import { PopupComponent } from '../../components/popup/popup.component';
 })
 
 export class AboutComponent {
+
+    selectedTestimonial: any = null;
+    showModal:boolean=false;
+
     values: { title: string; text: string; icon: string }[] = [
     {
       title: 'Conception back-end',
@@ -60,7 +64,7 @@ export class AboutComponent {
       title: 'Java',
       icon: "/img/profile-icon.png" ,
       subTitle:'hhh',
-      text:'hhhh'
+      text:'Application rigoureuse des principes de code propre (Clean Code, SOLID), couverture de tests, relecture systématique, documentation claire et collaboration active.'
     },
      {
       title: 'Java',
@@ -69,5 +73,21 @@ export class AboutComponent {
       text:'hhhh'
     },
   ];
+
+
+  openModal(testimonial: any) {
+  this.selectedTestimonial = testimonial;
+  this.showModal = true;
+}
+
+  closeModal() {
+    this.showModal=false;
+    this.selectedTestimonial = null;
+
+  }
+
+
+
+
 
 }
