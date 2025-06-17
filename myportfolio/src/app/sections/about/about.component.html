@@ -1,5 +1,11 @@
 
+ <div *ngIf="showModal" class="fixed inset-0 z-40 bg-opacity-25 backdrop-blur-sm"></div>
 
+  <div *ngIf="showModal" class="fixed inset-0 z-40 flex items-center justify-center ">
+    <div class="w-[70%]">
+      <app-popup [text]="selectedTestimonial.text" [title]="selectedTestimonial.title" [subTitle]="selectedTestimonial.subTitle" [icon]="selectedTestimonial.icon" [(isOpen)]="showModal"  ></app-popup>
+    </div>
+  </div>
 <div class="z-30">
     <p class="text-white font-mono ">
         Développeuse Full Stack passionnée, je conçois des applications performantes, maintenables et évolutives. Mon
@@ -14,7 +20,7 @@
     <app-title text="Mon expertise" size="medium"></app-title>
     <app-spacer size="sm"></app-spacer>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 ">
         <div *ngFor="let value of values">
             <app-card [text]="value.text" [icon]="value.icon" [title]="value.title"></app-card>
         </div>
@@ -37,10 +43,10 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-        <div *ngFor="let testimonial of testimonials" (click)="openModal(testimonial)">
+        <div *ngFor="let testimonial of testimonials" (click)="openModal(testimonial)" class="h-full h-min-full">
 
             <app-card [text]="testimonial.text" [icon]="testimonial.icon" [title]="testimonial.title"
-                [subTitle]="testimonial.subTitle" type="testimonials"></app-card>
+                [subTitle]="testimonial.subTitle" type="testimonials"  ></app-card>
         </div>
     </div>
 

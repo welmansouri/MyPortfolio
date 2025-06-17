@@ -1,4 +1,4 @@
-import { Component ,Input} from '@angular/core';
+import { Component ,Input,Output,EventEmitter} from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { CommonModule } from '@angular/common';
@@ -16,5 +16,17 @@ export class PopupComponent {
     @Input() text:string="";
     @Input() type:string="";
     @Input() subTitle:string="";
+    @Input() isOpen: boolean = false;
+    @Output() isOpenChange: EventEmitter<boolean> = new EventEmitter(false);
+
+
+
+    toggleModal(){
+      this.isOpen = !this.isOpen
+      this.isOpenChange.emit(this.isOpen);
+    }
+
+
+   
 
 }

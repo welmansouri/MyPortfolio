@@ -80,11 +80,6 @@ export class AboutComponent {
   this.showModal = true;
 }
 
-  closeModal() {
-    this.showModal=false;
-    this.selectedTestimonial = null;
-
-  }
 
 
 

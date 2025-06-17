@@ -1,12 +1,12 @@
 <div class=" w-min-full h-min-full bg-slate-700 bg-opacity-10 rounded-xl  shadow-md shadow-slate-500/50 p-6 justify-center ">
   <div class="flex justify-end">
-    <button class="text-white bg-yellow-600  rounded-full px-2 py-1 text-sm font-bold">
+    <button class="text-white bg-yellow-600  rounded-full px-2 py-1 text-sm font-bold" (click)="toggleModal()">
       ✕
     </button>
   </div>  <div class="flex flex-row">
     <div>
-      <div class=" w-15 h-15  grid font-extrabold  bg-white rounded-xl mr-4">
-        <img mat-card-image [src]="icon" alt="Profile Icon">
+      <div class=" w-15 h-15  grid font-extrabold   bg-white rounded-xl mr-4 ">
+        <img mat-card-image [src]="icon" alt="Profile Icon" >
       </div>
       <div class="text-yellow-600  text-4xl w-full h-full">
         <mat-icon class=" ">format_quote</mat-icon>

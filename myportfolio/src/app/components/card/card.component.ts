@@ -18,5 +18,4 @@ export class CardComponent {
   @Input() subTitle:string="";
 
 
-
 }

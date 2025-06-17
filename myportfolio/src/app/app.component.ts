@@ -13,7 +13,6 @@ import { PopupComponent } from './components/popup/popup.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  showModal:boolean=false;
   title = 'myportfolio';
   activeLink='about'
   navigationLinks = [
@@ -22,6 +21,8 @@ export class AppComponent {
   { label: 'Projets', anchor: 'portfolio' },
   { label: 'Contact', anchor: 'contact' }
 ];
+
+
 
 
   
