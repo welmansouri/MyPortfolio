@@ -1,1 +1,14 @@
-<p>resume works!</p>
+<div>
+  <div class="flex items-center mb-4">
+    <div class="w-8 h-8 flex items-center justify-center text-yellow-600 bg-white rounded-lg shadow">
+      <mat-icon fontSet="fa" fontIcon="fa-graduation-cap"></mat-icon>
+    </div>
+
+    <p class="text-2xl ml-3 font-bold text-gray-800">Éducation</p>
+  </div>
+  <div *ngfor="let value of educationValues">
+      <app-resume-part [title]="value.title" [subTitle]="value.subTitle" [text]="value.text"/>
+
+  </div>
+
+</div>
