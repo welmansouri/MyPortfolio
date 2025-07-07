@@ -1,11 +1,11 @@
-<div class="rounded-xl bg-gray-300 w-full h-full p-4">
+<div class="rounded-xl bg-[#bebce0]  w-full h-full p-4">
     <div class="flex justify-center items-center w-2/3 mx-auto">
         <img mat-card-image src="/img/profile-icon.png" alt="Profile Icon">
     </div>
     <mat-card-header>
         <div class="flex flex-col items-center text-center text-black w-full">
             <mat-card-title>Wafae EL MANSOURI</mat-card-title>
-            <div class="text-sm bg-slate-400 px-2 rounded-2xl">
+            <div class="text-sm bg-[#6754CA] px-2 rounded-2xl">
                 <mat-card-subtitle>Ingénieure en logiciel </mat-card-subtitle>
             </div>
         </div>
@@ -16,13 +16,13 @@
     <mat-card-content>
         <div class="flex flex-wrap gap-4">
             <div *ngFor="let value of values"
-                class="flex items-center w-full bg-white bg-opacity-10 rounded-xl p-2 shadow-xl shadow-gray-300/50">
-                <div class="w-12 h-12   place-content-center text-yellow-600 justify-center items-center ">
+                class="flex items-center w-full  bg-opacity-10 rounded-xl p-2 shadow-xl  ">
+                <div class="w-12 h-12   place-content-center text-[#6754CA] justify-center items-center ">
                     <mat-icon class=" ">{{value.img}}</mat-icon>
                 </div>
 
                 <div class="flex flex-col ">
-                    <div class="text-slate-400 text-xs uppercase">
+                    <div class="text-[#6754CA] text-xs uppercase">
                         {{ value.key }}
                     </div>
                     <div class="text-sm text-slate font-medium">
@@ -36,7 +36,7 @@
         <div class="flex justify-center gap-6 mt-4 ">
             <a *ngFor="let social of socialLinks" [href]="social.link" target="_blank" [attr.aria-label]="social.key"
                 class="hover:text-blue-400 transition duration-200">
-                <div class="w-6 h-6  text-yellow-600">
+                <div class="w-6 h-6  text-[#6754CA]">
                     <mat-icon fontSet="fab" [fontIcon]="social.icon"></mat-icon>
                 </div>
             </a>

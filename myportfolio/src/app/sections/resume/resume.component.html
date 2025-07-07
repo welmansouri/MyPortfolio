@@ -1,14 +1,45 @@
 <div>
-  <div class="flex items-center mb-4">
-    <div class="w-8 h-8 flex items-center justify-center text-yellow-600 bg-white rounded-lg shadow">
-      <mat-icon fontSet="fa" fontIcon="fa-graduation-cap"></mat-icon>
+
+  <div class=" mb-4">
+    <div class="flex items-center mb-4">
+      <div class="inline-flex items-center justify-center p-2 text-[#6754CA] bg-white rounded-lg shadow">
+        <mat-icon fontSet="fa" fontIcon="fa-graduation-cap" class="text-xl"></mat-icon>
+      </div>
+      <p class="text-2xl ml-3 font-bold text-gray-800">Éducation</p>
     </div>
-
-    <p class="text-2xl ml-3 font-bold text-gray-800">Éducation</p>
-  </div>
-  <div *ngfor="let value of educationValues">
-      <app-resume-part [title]="value.title" [subTitle]="value.subTitle" [text]="value.text"/>
-
+    <div *ngFor="let value of educationValues">
+      <app-resume-part [title]="value.title" [subTitle]="value.subTitle" [text]="value.text" />
+    </div>
   </div>
 
+  <div class=" mb-4">
+    <div class="flex items-center mb-4">
+      <div class="inline-flex items-center justify-center p-2 text-[#6754CA] bg-white rounded-lg shadow">
+        <mat-icon fontSet="fa" fontIcon="fa-briefcase"  class="text-xl"></mat-icon>
+      </div>
+      <p class="text-2xl ml-3 font-bold text-gray-800">Expérience professionnelle</p>
+    </div>
+    <div *ngFor="let value of educationValues">
+      <app-resume-part [title]="value.title" [subTitle]="value.subTitle" [text]="value.text" />
+    </div>
+  </div>
+
+
+
+
+  <div class=" mb-4">
+    <div class="flex items-center mb-4">
+      <div class="inline-flex items-center justify-center p-2 text-[#6754CA] bg-white rounded-lg shadow">
+        <mat-icon fontSet="fa" fontIcon="fa-lightbulb"  class="text-xl"></mat-icon>
+      </div>
+      <p class="text-2xl ml-3 font-bold text-gray-800">Centres d’intérêt</p>
+    </div>
+    <div *ngFor="let value of educationValues">
+      <app-resume-part [title]="value.title" [subTitle]="value.subTitle" [text]="value.text" />
+    </div>
+  </div>
+
+
+
+  <app-button text="Télécharger le CV" icon="download"></app-button>
 </div>

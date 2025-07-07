@@ -1,9 +1,9 @@
-<div class="flex  bg-white justify-self-end p-6 shadow-xl  rounded-r-xl rounded-bl-xl ">
+<div class="flex  bg-[#6754CA] justify-self-end p-6 shadow-xl  rounded-r-xl rounded-bl-xl ">
   <nav  *ngFor="let value of links ">
     <a (click)="setActiveLink(value.anchor)"
     [routerLink]="value.anchor" [ngClass]="{
-        'text-yellow-600': activeLink === value.anchor,
-        'text-gray-300': activeLink !== value.anchor
-      }" class="flex-1 mr-4 font-bold hover:text-slate-400 transition-colors duration-200">{{value.label}}</a>
+        'text-[#6754CA]': activeLink === value.anchor,
+        'text-[#F4F4F6] ': activeLink !== value.anchor
+      }" class="flex-1 mr-4 font-bold hover:text-[#6754CA] transition-colors duration-200">{{value.label}}</a>
   </nav>
 </div>

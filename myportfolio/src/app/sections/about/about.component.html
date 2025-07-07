@@ -1,57 +1,85 @@
+<div *ngIf="showModal" class="fixed inset-0 z-40 bg-opacity-25 backdrop-blur-sm"></div>
 
- <div *ngIf="showModal" class="fixed inset-0 z-40 bg-opacity-25 backdrop-blur-sm"></div>
+<div *ngIf="showModal" class="fixed inset-0 z-40 flex items-center justify-center ">
+  <div class="w-[70%]">
+    <app-popup [text]="selectedTestimonial.text" [title]="selectedTestimonial.title"
+      [subTitle]="selectedTestimonial.subTitle" [icon]="selectedTestimonial.icon" [(isOpen)]="showModal"></app-popup>
+  </div>
+</div>
+<div class="z-30">
+  <p class="text-black font-mono ">
+      <span class="relative inline-block before:absolute before:-inset-1 before:block before:-skew-y-1 before:bg-pink-500">
 
-  <div *ngIf="showModal" class="fixed inset-0 z-40 flex items-center justify-center ">
-    <div class="w-[70%]">
-      <app-popup [text]="selectedTestimonial.text" [title]="selectedTestimonial.title" [subTitle]="selectedTestimonial.subTitle" [icon]="selectedTestimonial.icon" [(isOpen)]="showModal"  ></app-popup>
+    <span class="relative text-white dark:text-gray-950">
+    Créer, structurer, améliorer — voilà ce qui m’anime au quotidien.</span>
+        </span>
+  </p>
+  <br/>
+  <p class="text-black font-mono ">
+    Développeuse Full Stack passionnée, je ne me contente pas de faire fonctionner une application : je veux qu’elle ait
+    du sens, qu’elle dure et qu’elle soit belle dans son code comme dans son usage.
+  </p>
+  <p class="text-black font-mono ">
+    Mon parcours m’a permis de naviguer entre des projets exigeants et des contextes techniques variés. Ce qui me
+    définit aujourd’hui, c’est une approche rigoureuse, une curiosité constante et un vrai plaisir à transformer un
+    besoin métier en solution concrète.
+  </p>
+  <p class="text-black font-mono ">
+    J’aime comprendre avant de coder, concevoir avant de livrer, challenger avant d’accepter.
+  </p>
+  <p class="text-black font-mono ">
+    <span class="relative inline-block before:absolute before:-inset-1 before:block before:-skew-y-1 before:bg-yellow-500">
+
+    <span class="relative text-white dark:text-gray-950">
+    Mon objectif ?        </span></span>
+ Rejoindre une équipe stimulante où je pourrai continuer à progresser, partager mes compétences et
+    relever des défis qui font grandir autant qu’ils motivent.
+  </p>
+
+  <app-spacer size="lg"></app-spacer>
+
+  <app-title text="Mon expertise" size="medium"></app-title>
+  <app-spacer size="sm"></app-spacer>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 ">
+    <div *ngFor="let value of values">
+      <app-card [text]="value.text" [icon]="value.icon" [title]="value.title"></app-card>
     </div>
   </div>
-<div class="z-30">
-    <p class="text-black font-mono ">
-        Développeuse Full Stack passionnée, je conçois des applications performantes, maintenables et évolutives. Mon
-        expertise se concentre sur les technologies Java / Spring Boot côté back-end et Angular / React côté front-end.
-        Avec plus de 2 ans d’expérience, j’ai travaillé sur des projets variés — de l’embarqué à la supervision
-        d’infrastructure, en passant par le web et le mobile. Curieuse, autonome et rigoureuse, je m’attache à écrire du
-        code propre, testé et documenté, tout en restant à l’écoute des besoins métiers. Aujourd’hui, je cherche à
-        rejoindre une équipe tech dynamique pour relever de nouveaux défis techniques.
-    </p>
-    <app-spacer size="lg"></app-spacer>
+  <app-spacer size="lg"></app-spacer>
 
-    <app-title text="Mon expertise" size="medium"></app-title>
-    <app-spacer size="sm"></app-spacer>
+  <app-title text="Mon univers tech" size="medium"></app-title>
+  <app-spacer size="sm"></app-spacer>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 ">
-        <div *ngFor="let value of values">
-            <app-card [text]="value.text" [icon]="value.icon" [title]="value.title"></app-card>
+  <!-- Conteneur avec overflow masqué -->
+  <div class="overflow-hidden w-full relative">
+    <!-- Bande défilante -->
+    <div class="flex gap-8 animate-slide w-max">
+      <ng-container *ngFor="let tech of techs.concat(techs)">
+        <div class="w-28 h-28 opacity-80 bg-white rounded-2xl flex items-center justify-center shadow">
+          <img [src]="tech.url" [alt]="tech.title" class="w-16 h-16 object-contain" />
         </div>
+      </ng-container>
     </div>
-    <app-spacer size="lg"></app-spacer>
+  </div>
 
-    <app-title text="Mon univers tech" size="medium"></app-title>
-    <app-spacer size="sm"></app-spacer>
 
-    <div class="flex flex-row">
-        <div *ngFor="let tech of techs" class="w-30 h-30 opacity-40 bg-white rounded-2xl justify-between mx-auto">
-            <img mat-card-image [src]="tech.url" [alt]="tech.title">
-        </div>
+  <app-spacer size="lg"></app-spacer>
+
+  <app-title text="Ce qu’on dit de moi" size="medium"></app-title>
+  <app-spacer size="sm"></app-spacer>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+    <div *ngFor="let testimonial of testimonials" (click)="openModal(testimonial)" class="h-full h-min-full">
+
+      <app-card [text]="testimonial.text" [icon]="testimonial.icon" [title]="testimonial.title"
+        [subTitle]="testimonial.subTitle" type="testimonials"></app-card>
     </div>
+  </div>
 
-    <app-spacer size="lg"></app-spacer>
+  <app-spacer size="lg"></app-spacer>
 
-    <app-title text="Ce qu’on dit de moi" size="medium"></app-title>
-    <app-spacer size="sm"></app-spacer>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-        <div *ngFor="let testimonial of testimonials" (click)="openModal(testimonial)" class="h-full h-min-full">
-
-            <app-card [text]="testimonial.text" [icon]="testimonial.icon" [title]="testimonial.title"
-                [subTitle]="testimonial.subTitle" type="testimonials"  ></app-card>
-        </div>
-    </div>
-
-    <app-spacer size="lg"></app-spacer>
-
-    <app-button text="Exporter le document de référence" icon="download"></app-button>
+  <app-button text="Exporter le document de référence" icon="download"></app-button>
 
 </div>

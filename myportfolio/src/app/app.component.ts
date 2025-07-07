@@ -5,10 +5,9 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { TitleComponent } from './components/title/title.component';
 import {MatDividerModule} from '@angular/material/divider';
-import { PopupComponent } from './components/popup/popup.component';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,CommonModule,ToolbarComponent,ProfileComponent,TitleComponent,MatDividerModule,PopupComponent],
+  imports: [RouterOutlet,CommonModule,ToolbarComponent,ProfileComponent,TitleComponent,MatDividerModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
