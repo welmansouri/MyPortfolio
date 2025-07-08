@@ -1,7 +1,7 @@
 <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-6">
 
-  <div class="flex flex-row gap-10">
-    <div class="w-1/2">
+  <div class="md:flex md:flex-row gap-10">
+    <div class="md:w-1/2 ">
       <input
         type="text"
         formControlName="fullName"
@@ -12,7 +12,7 @@
       </p>
     </div>
 
-    <div class="w-1/2">
+    <div class="md:w-1/2 mt-6  md:mt-0">
       <input
         type="email"
         formControlName="email"
@@ -39,7 +39,7 @@
   <div>
     <button
       type="submit"
-      class="bg-[#6754CA] mt-6 rounded-xl w-2/5  text-white text-lg px-6 py-3  justify-center text-center p-2 " (click)="onSubmit()">
+      class="bg-[#6754CA] mt-6 rounded-xl w-2/5  text-white text-lg px-6 py-3  justify-center text-center p-2 " (click)="sendEmail()">
       Envoyer
     </button>
   </div>

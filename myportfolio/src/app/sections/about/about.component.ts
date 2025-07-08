@@ -1,4 +1,4 @@
-import { Component,Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { TitleComponent } from '../../components/title/title.component';
 import { CardComponent } from '../../components/card/card.component';
 import { CommonModule } from '@angular/common';
@@ -7,17 +7,17 @@ import { SpacerComponent } from '../../components/spacer/spacer.component';
 import { PopupComponent } from '../../components/popup/popup.component';
 @Component({
   selector: 'app-about',
-  imports: [TitleComponent,CardComponent,CommonModule,ButtonComponent,SpacerComponent,PopupComponent],
+  imports: [TitleComponent, CardComponent, CommonModule, ButtonComponent, SpacerComponent, PopupComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css'
 })
 
 export class AboutComponent {
 
-    selectedTestimonial: any = null;
-    showModal:boolean=false;
+  selectedTestimonial: any = null;
+  showModal: boolean = false;
 
-    values: { title: string; text: string; icon: string }[] = [
+  values: { title: string; text: string; icon: string }[] = [
     {
       title: 'Conception back-end',
       text: 'Modélisation claire de la logique métier, structuration d’architectures évolutives et sécurisées, optimisation des accès aux données et des performances serveur.',
@@ -40,16 +40,16 @@ export class AboutComponent {
     }
   ];
 
-   techs: { title: string; url: string;  }[] = [
+  techs: { title: string; url: string; }[] = [
     {
       title: 'Java',
       url: '/img/techs/java-logo-vector-1.svg',
     },
-     {
+    {
       title: 'Angular',
       url: '/img/techs/angular-icon-logo.svg',
     },
-   {
+    {
       title: 'Spring Boot',
       url: '/img/techs/spring-3.svg',
     },
@@ -88,18 +88,28 @@ export class AboutComponent {
     }
   ];
 
-     testimonials: { title: string; icon: string; subTitle: string; text: string;  }[] = [
+  testimonials: { title: string; icon: string; subTitle: string; text: string; }[] = [
     {
       title: 'Adrien Makarowicz',
-      icon: "/img/profile-icon.png" ,
-      subTitle:'Responsable informatique - Wedeal',
-      text:'J\'ai eu le plaisir d\'accompagner Wafae tout au long de son parcours au sein de WeDeal, à la fois en tant que tuteur pendant deux ans et comme responsable hiérarchique. Cela m’a permis d’observer de près sa progression et son évolution constante en tant que développeuse web fullstack et gestionnaire de projet.Au fil des années, Wafae a démontré une forte montée en compétence sur plusieurs fronts :Maîtrise technique : Elle a développé une compréhension approfondie de divers langages informatiques et des outils spécifiques à notre entreprise, renforçant ainsi son efficacité dans les projets techniques.Autonomie et analyse métier : Sa capacité à analyser nos activités, prendre du recul et proposer des solutions pertinentes a été un atout précieux pour notre organisation.Expertise en TMA : Sa rigueur et sa finesse dans la Tierce Maintenance Applicative ont permis d’assurer une continuité et une qualité de service irréprochables.Gestion de projet : Wafae s’est distinguée par sa proactivité dans le cadrage des besoins, sa participation active aux rituels SCRUM, et sa structuration rigoureuse des projets dans des outils tels que Jira et Notion.Au-delà de ses compétences techniques et organisationnelles, Wafae a su instaurer un climat de confiance et de collaboration grâce à son professionnalisme et son écoute attentive, tant au sein du service informatique que dans ses interactions avec d’autres départements.Je recommande vivement Wafae, non seulement pour ses compétences techniques et sa rigueur, mais également pour sa capacité à gérer efficacement des projets et à collaborer avec divers interlocuteurs. Elle sera un atout indéniable pour toute organisation.'}
+      icon: "/img/profile-icon.png",
+      subTitle: 'Responsable informatique - Wedeal',
+      text: 'J\'ai eu le plaisir d\'accompagner Wafae tout au long de son parcours au sein de WeDeal, à la fois en tant que tuteur pendant deux ans et comme responsable hiérarchique. Cela m’a permis d’observer de près sa progression et son évolution constante en tant que développeuse web fullstack et gestionnaire de projet.Au fil des années, Wafae a démontré une forte montée en compétence sur plusieurs fronts :Maîtrise technique : Elle a développé une compréhension approfondie de divers langages informatiques et des outils spécifiques à notre entreprise, renforçant ainsi son efficacité dans les projets techniques.Autonomie et analyse métier : Sa capacité à analyser nos activités, prendre du recul et proposer des solutions pertinentes a été un atout précieux pour notre organisation.Expertise en TMA : Sa rigueur et sa finesse dans la Tierce Maintenance Applicative ont permis d’assurer une continuité et une qualité de service irréprochables.Gestion de projet : Wafae s’est distinguée par sa proactivité dans le cadrage des besoins, sa participation active aux rituels SCRUM, et sa structuration rigoureuse des projets dans des outils tels que Jira et Notion.Au-delà de ses compétences techniques et organisationnelles, Wafae a su instaurer un climat de confiance et de collaboration grâce à son professionnalisme et son écoute attentive, tant au sein du service informatique que dans ses interactions avec d’autres départements.Je recommande vivement Wafae, non seulement pour ses compétences techniques et sa rigueur, mais également pour sa capacité à gérer efficacement des projets et à collaborer avec divers interlocuteurs. Elle sera un atout indéniable pour toute organisation.'
+    }
   ];
 
 
   openModal(testimonial: any) {
-  this.selectedTestimonial = testimonial;
-  this.showModal = true;
+    this.selectedTestimonial = testimonial;
+    this.showModal = true;
+  }
+
+
+download() {
+  const link = document.createElement('a');
+  link.href = 'pdf/wafae-EL-MANSOURI-CV.pdf';
+  link.download = 'Resume.pdf';
+  link.target = '_blank';   
+  link.click();
 }
 
 

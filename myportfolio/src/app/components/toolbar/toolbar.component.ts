@@ -1,4 +1,4 @@
-import { Component,Input } from '@angular/core';
+import { Component,Input,Output,EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router'; 
 @Component({
@@ -10,12 +10,11 @@ import { RouterModule } from '@angular/router';
 export class ToolbarComponent {
   @Input() activeLink:string='';
   @Input() links: { label: string; anchor: string }[] = [];
+  @Output() header = new EventEmitter<string>();
 
   setActiveLink(anchor:string){
-    console.log("anchor" + anchor)
     this.activeLink=anchor;
-        console.log("this.activeLink " + this.activeLink)
-
+    this.header.emit(anchor);
   }
 
 

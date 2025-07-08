@@ -5,7 +5,7 @@
     <mat-card-header>
         <div class="flex flex-col items-center text-center text-black w-full">
             <mat-card-title>Wafae EL MANSOURI</mat-card-title>
-            <div class="text-sm bg-[#6754CA] px-2 rounded-2xl">
+            <div class="text-sm bg-[#6754CA] px-2 rounded-2xl text-white">
                 <mat-card-subtitle>Ingénieure en logiciel </mat-card-subtitle>
             </div>
         </div>
@@ -36,7 +36,7 @@
         <div class="flex justify-center gap-6 mt-4 ">
             <a *ngFor="let social of socialLinks" [href]="social.link" target="_blank" [attr.aria-label]="social.key"
                 class="hover:text-blue-400 transition duration-200">
-                <div class="w-6 h-6  text-[#6754CA]">
+                <div class="w-6 h-6  text-[#6754CA] hover:text-[#230E91]">
                     <mat-icon fontSet="fab" [fontIcon]="social.icon"></mat-icon>
                 </div>
             </a>

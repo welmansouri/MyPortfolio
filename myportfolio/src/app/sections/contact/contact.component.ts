@@ -1,6 +1,7 @@
 import { Component ,} from '@angular/core';
 import {MatInputModule} from '@angular/material/input';
 import { CommonModule } from '@angular/common';
+import emailjs from 'emailjs-com';
 
 import {
   FormControl,
@@ -46,5 +47,32 @@ export class ContactComponent {
       this.contactForm.markAllAsTouched();
     }
   }
+
+sendEmail() {
+  if (this.contactForm.invalid) {
+    this.contactForm.markAllAsTouched();
+    return;
+  }
+
+  const { fullName, email, message } = this.contactForm.value;
+
+  emailjs.send(
+    'service_qbxh218',   
+    'template_n2bdfpc', 
+    {
+      from_name: fullName,
+      from_email: email,
+      message: message
+    },
+    'Z5LuDTCTDbU0C5VFg'     
+  ).then(() => {
+    alert('Message envoyé avec succès ');
+    this.contactForm.reset(); 
+  }, (error) => {
+    console.error('Erreur d’envoi :', error);
+    alert("Une erreur s'est produite ");
+  });
+}
+
 
 }

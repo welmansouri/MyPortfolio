@@ -1,6 +1,6 @@
-<div class=" w-min-full h-min-full bg-[#4f3fa8]   bg-opacity-10 rounded-xl  shadow-md  /50 p-6 justify-center ">
+<div class=" md:w-min-full md:h-min-full  bg-[#4f3fa8]   bg-opacity-10 rounded-xl  shadow-md  /50 md:p-6  justify-center ">
   <div class="flex justify-end">
-    <button class="text-white bg-[#6754CA]  rounded-full px-2 py-1 text-sm font-bold" (click)="toggleModal()">
+    <button class="text-white bg-[#6754CA] hover:bg-[#230E91] rounded-full px-2 py-1 text-sm font-bold" (click)="toggleModal()">
       ✕
     </button>
   </div>  <div class="flex flex-row">
@@ -8,7 +8,7 @@
       <div class=" w-15 h-15  grid font-extrabold   bg-white rounded-xl mr-4 ">
         <img mat-card-image [src]="icon" alt="Profile Icon" >
       </div>
-      <div class="text-[#6754CA]  text-4xl w-full h-full">
+      <div class="text-black  text-4xl w-full h-full">
         <mat-icon class=" ">format_quote</mat-icon>
       </div>
     </div>
@@ -16,7 +16,7 @@
       <div class="text-white font-bold text-3xl">
         {{ title }}
       </div>
-      <div class="text-xl text-[#6754CA]">
+      <div class="text-xl text-black">
         {{ subTitle }}
       </div>
       <div class="text-white ">

@@ -1,7 +1,7 @@
 <div *ngIf="showModal" class="fixed inset-0 z-40 bg-opacity-25 backdrop-blur-sm"></div>
 
-<div *ngIf="showModal" class="fixed inset-0 z-40 flex items-center justify-center ">
-  <div class="w-[70%]">
+<div *ngIf="showModal" class="absolute md:fixed md:inset-0  z-40 flex items-center justify-center ">
+  <div class="w-[70%] ">
     <app-popup [text]="selectedTestimonial.text" [title]="selectedTestimonial.title"
       [subTitle]="selectedTestimonial.subTitle" [icon]="selectedTestimonial.icon" [(isOpen)]="showModal"></app-popup>
   </div>
@@ -16,7 +16,7 @@
   </p>
   <br/>
   <p class="text-black font-mono ">
-    Développeuse Full Stack passionnée, je ne me contente pas de faire fonctionner une application : je veux qu’elle ait
+    Développeuse Full Stack passionnée, je ne me contente pas de faire fonctionner une application, je veux qu’elle ait
     du sens, qu’elle dure et qu’elle soit belle dans son code comme dans son usage.
   </p>
   <p class="text-black font-mono ">
@@ -80,6 +80,6 @@
 
   <app-spacer size="lg"></app-spacer>
 
-  <app-button text="Exporter le document de référence" icon="download"></app-button>
+  <app-button text="Exporter le document de référence" icon="download" (actionHandler)="download()"></app-button>
 
 </div>
