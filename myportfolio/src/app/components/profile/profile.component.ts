@@ -14,12 +14,12 @@ export class ProfileComponent {
     values: { key: string; value: string; img: string }[] = [
       {
         key: 'email',
-        value: 'wafae@gmail.com',
+        value: 'wafaeelmansouri1@gmail.com',
         img: 'email'
       },
       {
         key: 'téléphone',
-        value: '+212 600 123 456',
+        value: '+337 557 073 27',
         img: 'phone'
       },
       {
@@ -36,12 +36,12 @@ export class ProfileComponent {
   socialLinks: { key: string; link: string; icon: string }[] = [
     {
       key: 'LinkedIn',
-      link: 'https://www.linkedin.com/in/wafae-elmansouri/',
+      link: 'https://www.linkedin.com/in/wafae-el-mansouri-ab400a203/',
       icon: 'fa-linkedin'
     },
     {
       key: 'GitHub',
-      link: 'https://github.com/wafae-mansouri',
+      link: 'https://github.com/welmansouri',
       icon: 'fa-github'
     }
   ];
