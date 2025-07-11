@@ -1,6 +1,6 @@
 <div class="rounded-xl bg-[#bebce0]  w-full h-full p-4">
     <div class="flex justify-center items-center w-2/3 mx-auto rounded-3xl">
-        <img mat-card-image src="assets/img/profile/profile.png" alt="Profile Icon">
+        <img mat-card-image src="img/profile/profile2.png" alt="Profile Icon">
     </div>
     <mat-card-header>
         <div class="flex flex-col items-center text-center text-black w-full">
@@ -16,7 +16,7 @@
     <mat-card-content>
         <div class="flex flex-wrap gap-4">
             <div *ngFor="let value of values"
-                class="flex items-center w-full  bg-opacity-10 rounded-xl p-2 shadow-xl  ">
+                class="flex items-center w-full  bg-opacity-10 rounded-xl p-2 shadow-xl transform transition-transform duration-200 hover:scale-[1.04] ">
                 <div class="w-12 h-12   place-content-center text-[#6754CA] justify-center items-center ">
                     <mat-icon class=" ">{{value.img}}</mat-icon>
                 </div>

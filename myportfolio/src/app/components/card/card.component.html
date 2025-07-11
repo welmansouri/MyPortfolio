@@ -1,4 +1,4 @@
-<div class="flex flex-wrap gap-4 h-full">
+<div class="flex flex-wrap gap-4 h-full transform transition-transform duration-200 hover:scale-[1.04] ">
   <div *ngIf="type != 'testimonials'"
     class="flex  h-full w-full bg-[#bebce0]   bg-opacity-10 rounded-xl  shadow-xl /50 p-6">
 
@@ -20,8 +20,8 @@
 
 
   <div *ngIf="type == 'testimonials'"
-    class=" w-full bg-[#bebce0]   bg-opacity-10 rounded-xl  shadow-xl  /50 p-6 " >
-    <div class="flex flex-row">
+    class=" w-full bg-[#bebce0]   bg-opacity-10 rounded-xl  shadow-xl  /50 p-6  hover:border-[#230E91]  hover:border-2 transform transition-transform duration-200 hover:scale-[1.04] hover:cursor-pointer" >
+    <div class="flex flex-row ">
 
       <div class=" w-15 h-15  grid font-extrabold  bg-white rounded-xl mr-4">
         <img mat-card-image [src]="icon" alt="Profile Icon">
