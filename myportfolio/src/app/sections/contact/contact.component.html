@@ -53,11 +53,13 @@
     </div>
 
     <div>
-      <button type="submit"
+        <app-button text="Envoyer" icon="send" (actionHandler)="sendEmail()"></app-button>
+
+      <!-- <button type="submit"
         class="bg-[#6754CA]   rounded-xl w-2/5 hover:bg-[#230E91]  text-white text-lg justify-center text-center p-2 "
         (click)="sendEmail()">
         Envoyer
-      </button>
+      </button> -->
     </div>
   </form>
 

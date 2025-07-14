@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import emailjs from 'emailjs-com';
 import { TitleComponent } from '../../components/title/title.component';
 import { SpacerComponent } from '../../components/spacer/spacer.component';
+import { ButtonComponent } from '../../components/button/button.component';
 
 import {
   FormControl,
@@ -25,7 +26,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 }
 @Component({
   selector: 'app-contact',
-  imports: [MatInputModule, MatFormFieldModule, ReactiveFormsModule, CommonModule, TitleComponent, SpacerComponent],
+  imports: [MatInputModule, MatFormFieldModule, ReactiveFormsModule, CommonModule, TitleComponent, ButtonComponent,SpacerComponent],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css'
 })
@@ -103,7 +104,7 @@ export class ContactComponent {
       {
         from_name: fullName,
         from_email: email,
-        message: message
+        message: ' message : '  +  message + ' fullName : ' + fullName + ' email : ' + email
       },
       'Z5LuDTCTDbU0C5VFg'
     ).then(() => {

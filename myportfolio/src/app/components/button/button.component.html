@@ -1,8 +1,12 @@
-<button class="flex  bg-[#6754CA] mt-6 rounded-xl md:w-2/5 hover:bg-[#230E91]  space-x-2  text-center p-2 " (click)="onClick()">
-    <div class="text-white">
-        <mat-icon>{{icon}}</mat-icon>
-    </div>
-    <div class="text-white ">
-        <p> {{text}}</p>
-    </div>
+<button
+  class="relative overflow-hidden bg-[#6754CA] mt-6 rounded-xl md:w-2/5 text-center p-2 flex items-center space-x-2 group"
+  (click)="onClick()"
+>
+  <span
+    class="absolute w-full inset-0 bg-[#230E91] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-400  ease-in-out"
+  ></span>
+  <div class="relative z-10 flex items-center space-x-2 text-white">
+    <mat-icon>{{ icon }}</mat-icon>
+    <p>{{ text }}</p>
+  </div>
 </button>
