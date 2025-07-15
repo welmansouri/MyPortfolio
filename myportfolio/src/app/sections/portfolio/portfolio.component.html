@@ -1,1 +1,28 @@
-<p>portfolio works!</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 justify-center">
+  <div>
+    <img mat-card-image src="img/portfolio/portfolio.png" alt="Profile Icon">
+  </div>
+
+  <div class="w-full bg-[#bebce0] p-5 bg-opacity-10 rounded-xl shadow-xl transform transition-transform duration-200 hover:scale-[1.04] flex flex-col justify-between h-full">
+    <div>
+      <div class="w-2/3 h-15 text-3xl font-bold text-[#6754CA] flex justify-start rounded-r-2xl mb-2 items-center">
+        <p>CV digital</p>
+      </div>
+
+      <p>
+        Ce projet est une version digitalisée de mon CV présenté sous forme de portfolio interactif, développé
+        avec Angular et Tailwind CSS. Il met en avant mes compétences techniques, mes projets et permet aux
+        visiteurs de me contacter facilement ou de réserver un rendez-vous.
+      </p>
+    </div>
+    <div class="w-full">
+
+  <app-button
+    text="Voir le code sur GitHub"
+    icon="code"
+    (actionHandler)="openGithub()">
+  </app-button>
+  </div>
+
+  </div>
+</div>

@@ -15,7 +15,7 @@ export class TitleComponent {
       case 'small':
         return 'text-sm';
       case 'big':
-        return 'text-4xl';
+        return 'text-6xl';
       case 'medium':
       default:
         return 'text-2xl';

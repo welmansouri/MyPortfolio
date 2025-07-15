@@ -26,10 +26,10 @@ export class AppComponent {
   activeLink='about';
   currentHeader = 'À propos';
   navigationLinks = [
-  { label: 'À propos', anchor: 'about' },
-  { label: 'Parcours', anchor: 'resume' },       
-  // { label: 'Projets', anchor: 'portfolio' },
-  { label: 'Contact', anchor: 'contact' }
+  { label: 'À propos', anchor: 'about' ,icon: 'fa-user'},
+  { label: 'Parcours', anchor: 'resume' ,icon:'fa-graduation-cap'},       
+  { label: 'Projets', anchor: 'portfolio' ,icon: 'fa-briefcase' },
+  { label: 'Contact', anchor: 'contact' ,icon:'fa-envelope'}
 ];
 
 
