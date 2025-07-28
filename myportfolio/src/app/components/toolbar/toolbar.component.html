@@ -1,16 +1,18 @@
-<div class="flex justify-end p-6  rounded-r-xl space-x-1 rounded-bl-xl">
+<div class="flex justify-end p-6  space-x-1 ">
   <nav *ngFor="let value of links">
     <div
       (click)="setActiveLink(value.anchor)"
       [routerLink]="value.anchor"
       matTooltip="{{ value.label }}"
       [ngClass]="{
-        'bg-[#230E91]': activeLink === value.anchor,
-        'bg-[#6754CA]': activeLink !== value.anchor
+        'bg-[#230E91] text-white': activeLink === value.anchor,
+        'bg-[#6754CA] text-black': activeLink !== value.anchor
       }"
-      class="w-14 h-14  shadow-3xl transform transition-transform duration-200 hover:scale-[1.04] rounded-full text-white text-2xl flex items-center justify-center hover:text-black transition-colors duration-200"
+      class="w-14 h-14 cursor-pointer shadow-3xl transform hover:scale-[1.04] rounded-full  flex items-center justify-center hover:text-black transition-colors duration-200"
     >
-      <mat-icon fontSet="fa" [fontIcon]="value.icon"></mat-icon>
+  <div>
+      <mat-icon class="text-xl" fontSet="fa" [fontIcon]="value.icon"></mat-icon>
+    </div>  
     </div>
   </nav>
     <div class="w-10 h-5 z-10 justify-end items-end fixed mt-20 ">
