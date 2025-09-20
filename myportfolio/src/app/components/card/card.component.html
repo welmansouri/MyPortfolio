@@ -1,15 +1,15 @@
-<div class="flex flex-wrap gap-4 h-full transform transition-transform duration-200 hover:scale-[1.04] ">
-  <div *ngIf="type != 'testimonials'"
-    class="flex  h-full w-full bg-[#bebce0]   bg-opacity-10 rounded-xl  shadow-xl /50 p-6">
+<div class="flex flex-wrap gap-4 h-full transform transition-transform duration-200   ">
+  <div *ngIf="type != 'testimonials' && type != 'skills'"
+    class="h-full w-full bg-bg   bg-opacity-10 rounded-xl  shadow-xl /50 p-6 hover:scale-[1.04]">
 
-    <div class=" w-20 h-20  grid text-2xl font-extrabold  text-[#6754CA] rounded-xl mr-4">
+    <div class="w-20 h-20 bg-primary justify-center items-center grid text-2xl font-extrabold  text-bg rounded-full ">
       <mat-icon fontSet="fas" [fontIcon]="icon"></mat-icon>
     </div>
     <div class="flex flex-col">
       <div class="text-black font-bold text-xl">
         {{ title }}
       </div>
-      <div class="text-sm text-black">
+      <div class="text-sm  text-muted">
         {{ text }}
       </div>
     </div>
@@ -17,10 +17,26 @@
   </div>
 
 
+  <div *ngIf="type == 'skills'" class="h-full w-full bg-bg   bg-opacity-10 rounded-xl  shadow-xl /50 p-6">
+    <div class="flex flex-col">
+      <div class="text-black font-bold text-xl">
+        {{ title }}
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 mx-auto my-auto  space-x-2 space-y-2 justify-center items-center ">
+        <div *ngFor="let value of techs">
+          <div class="flex justify-center hover:scale-[1.04] items-center w-20 h-20  text-center text-xl rounded-2xl shadow-xl ">
+                    <img mat-card-image [src]="value" [alt]="value">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
 
 
   <div *ngIf="type == 'testimonials'"
-    class=" w-full bg-[#bebce0]   bg-opacity-10 rounded-xl  shadow-xl  /50 p-6  hover:border-[#230E91]  hover:border-2 transform transition-transform duration-200 hover:scale-[1.04] hover:cursor-pointer" >
+    class=" w-full bg-[#bebce0]   bg-opacity-10 rounded-xl  shadow-xl  /50 p-6  hover:border-[#230E91]  hover:border-2 transform transition-transform duration-200 hover:scale-[1.04] hover:cursor-pointer">
     <div class="flex flex-row ">
 
       <div class=" w-15 h-15  grid font-extrabold  bg-white rounded-xl mr-4">

@@ -1,18 +1,13 @@
-<div *ngIf="showModal" class="fixed inset-0 z-40 bg-opacity-25 backdrop-blur-sm"></div>
+<!-- <div *ngIf="showModal" class="fixed inset-0 z-40 bg-opacity-25 backdrop-blur-sm"></div>
 
-<div *ngIf="showModal" class="absolute md:fixed md:inset-0  z-40 flex items-center justify-center ">
-  <div class="w-[70%] ">
-    <app-popup [text]="selectedTestimonial.text" [title]="selectedTestimonial.title"
-      [subTitle]="selectedTestimonial.subTitle" [icon]="selectedTestimonial.icon" [(isOpen)]="showModal"></app-popup>
-  </div>
-</div>
+
 <div class="z-30">
   <p class="text-black   ">
-      <!-- <span class="relative inline-block before:absolute before:-inset-1 before:block before:-skew-y-1 before:bg-pink-500"> -->
+      <span class="relative inline-block before:absolute before:-inset-1 before:block before:-skew-y-1 before:bg-pink-500"> 
 
     <span class="relative text-2xl text-black font-bold dark:text-gray-950">
     Créer, structurer, améliorer — voilà ce qui m’anime au quotidien.</span>
-        <!-- </span> -->
+        <!-- </span>
   </p>
   <br/>
   <p class="text-black  ">
@@ -28,11 +23,11 @@
     J’aime comprendre avant de coder, concevoir avant de livrer, challenger avant d’accepter.
   </p>
   <p class="text-black  ">
-    <!-- <span class="relative inline-block before:absolute before:-inset-1 before:block before:-skew-y-1 before:bg-yellow-500"> -->
+    <!-- <span class="relative inline-block before:absolute before:-inset-1 before:block before:-skew-y-1 before:bg-yellow-500"> 
 
     <span class="relative text-[#6754CA] dark:text-gray-950">
     Mon objectif ?        </span>
-  <!-- </span> -->
+  <!-- </span>
  Rejoindre une équipe stimulante où je pourrai continuer à progresser, partager mes compétences et
     relever des défis qui font grandir autant qu’ils motivent.
   </p>
@@ -52,9 +47,9 @@
   <app-title text="Mon univers tech" size="medium"></app-title>
   <app-spacer size="sm"></app-spacer>
 
-  <!-- Conteneur avec overflow masqué -->
+  <!-- Conteneur avec overflow masqué
   <div class="overflow-hidden w-full relative">
-    <!-- Bande défilante -->
+    <!-- Bande défilante 
     <div class="flex gap-8 animate-slide w-max">
       <ng-container *ngFor="let tech of techs.concat(techs)">
         <div class="w-28 h-28 opacity-80 bg-white rounded-2xl flex items-center justify-center shadow">
@@ -83,4 +78,106 @@
 
   <app-button text="Exporter le document de référence" icon="download" (actionHandler)="download()"></app-button>
 
+</div> -->
+
+<div class="flex w-full justify-between min-h-dvh max-h-dvh   shadow-3xl">
+
+  <div class="p-14 mt-20 w-1/2 h-full space-y-8 max-h-full min-h-full ">
+    <div class="rounded-3xl w-4/11 bg-secondary p-2 ">
+      <p>Disponible immédiatement</p>
+    </div>
+    <div class="text-3xl font-bold w-4/5">
+      <p>Développeur Full‑Stack
+        créant des expériences rapides & élégantes</p>
+    </div>
+    <div class="text-muted text-m ">
+      <p>Je conçois et développe des applications web & mobiles centrées utilisateur. Stack préférée : React, Node, et
+        une touche de design system.</p>
+    </div>
+    <div class="flex space-x-2">
+      <app-button text="Télécharger le CV (PDF)" type="primary" icon="send" (actionHandler)="download()">
+      </app-button>
+      <app-button text="Voir mes projets" type="secondary" icon="send" (actionHandler)="download()">
+      </app-button>
+    </div>
+
+  </div>
+
+  <div class=" w-1/2 h-full">
+    <p>
+      hehhhhhhh
+    </p>
+  </div>
+</div>
+
+
+<div class="w-full bg-primary p-10">
+  <div class="mx-auto max-w-2/3 grid place-items-center gap-6 text-center">
+    <h2 class="font-bold text-2xl p-4">Qui suis-je ?</h2>
+
+    <div class="font-light text-xl space-y-4 px-6 md:px-12">
+      <p class="mx-auto max-w-prose">
+        Avant toute chose, je me présente. J'ai 29 ans et je suis actuellement en poste
+        de Chef de projet digital pour une société multi-services à Genève. Je vous
+        présente mon portfolio qui retrace mon parcours professionnel.
+      </p>
+
+      <p class="mx-auto max-w-prose">
+        Au fil de mes formations et de mes expériences, je me suis spécialisé dans le
+        domaine du développement web et du marketing digital. Je vous invite à consulter
+        le panel non exhaustif de mes compétences ci-dessous.
+      </p>
+    </div>
+
+    <div class="min-w-0 max-w-[70ch]">
+      <app-button
+        text="Continuer"
+        type="secondary"
+        icon="send"
+        (actionHandler)="download()">
+      </app-button>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="w-full  p-10">
+  <div class="mx-auto grid place-items-center gap-6 text-center">
+    <h2 class="font-bold text-2xl p-4">Mon expertise</h2>
+
+
+  <div class=" w-min-full grid grid-cols-1 md:grid-cols-5 gap-6 px-20">
+    <div *ngFor="let value of values">
+      <app-card [text]="value.text" [icon]="value.icon" [title]="value.title"></app-card>
+    </div>
+  </div> 
+  </div>
+</div>
+
+
+<div class="w-full  p-10">
+  <div class="mx-auto grid place-items-center gap-6 text-center">
+    <h2 class="font-bold text-2xl p-4">Mes compétences</h2>
+
+
+  <div class=" w-min-full grid grid-cols-1 md:grid-cols-4 gap-6 px-20">
+    <div *ngFor="let value of skills">
+      <app-card type="skills" [title]="value.name" [techs]="value.techs"></app-card>
+    </div>
+  </div> 
+  </div>
+</div>
+
+
+
+<div class="w-full bg-primary p-10">
+  <div class="mx-auto grid place-items-center gap-6 text-center">
+    <h2 class="font-bold text-2xl p-4">Mon parcours</h2>
+
+
+  <div class=" w-min-full  px-20">
+   <app-resume></app-resume>
+  </div> 
+  </div>
 </div>

@@ -1,22 +1,16 @@
-<div class="flex justify-end p-6  space-x-1 ">
-  <nav *ngFor="let value of links">
-    <div
-      (click)="setActiveLink(value.anchor)"
-      [routerLink]="value.anchor"
-      matTooltip="{{ value.label }}"
-      [ngClass]="{
-        'bg-[#230E91] text-white': activeLink === value.anchor,
-        'bg-[#6754CA] text-black': activeLink !== value.anchor
-      }"
-      class="w-14 h-14 cursor-pointer shadow-3xl transform hover:scale-[1.04] rounded-full  flex items-center justify-center hover:text-black transition-colors duration-200"
-    >
-  <div>
-      <mat-icon class="text-xl" fontSet="fa" [fontIcon]="value.icon"></mat-icon>
-    </div>  
-    </div>
+<div class="flex justify-end items-center gap-4 ">
+  <nav *ngFor="let value of links" class="flex w-1/11 items-center justify-end">
+    <app-button
+      [text]="value.label"
+      [type]="value.type"
+
+      icon="send"
+      (actionHandler)="setActiveLink(value.anchor)">
+    </app-button>
   </nav>
-    <div class="w-10 h-5 z-10 justify-end items-end fixed mt-20 ">
-        <img mat-card-image src="img/language/france.jpg" alt="Profile Icon">
-  </div>
 </div>
-  
+
+
+
+
+

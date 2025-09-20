@@ -18,37 +18,12 @@
 <!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<div class="md:flex  w-full ">
-
-  <div class="absolute top-0 left-0 w-full h-full -z-10 overflow-hidden">
-  <div *ngFor="let bubble of bubbleArray"
-       class="absolute bottom-0 bg-[#F6735A] opacity-20 rounded-full blur-sm animate-bubble"
-       [ngStyle]="{
-         left: bubble.left,
-         width: bubble.width,
-         height: bubble.height,
-         animationDuration: bubble.duration
-       }">
-  </div>
-</div>
-  <div class="md:w-1/5  mr-4 h-[90%] md:fixed  fade-in-left">
-    <app-profile></app-profile>
-  </div>
-  <div class="hidden  md:block md:ml-[25%] md:w-[100%] h-screen overflow-y-auto    rounded-xl  ">
-    <div class="flex flex-row justify-between items-center  ">
-      <div class="pl-4 fade-in-left">
-        <app-title [text]="currentHeader"  size="big"></app-title>
-        <div class="w-2/3  ">
-          <mat-divider color="yellow"></mat-divider>
-        </div>
-      </div>
-      <div class="fade-in-right">
-        <app-toolbar [links]="navigationLinks" [activeLink]="activeLink" (header)="onHeaderChange($event)"/>
-      </div>
+<div class="w-full ">
+   <div class="md:p-2 shadow-md sticky top-0 backdrop-blur   z-30 ">
+      <app-toolbar [links]="navigationLinks"/>
     </div>
-    <div class="md:p-6 ">
+    <div class="">
       <router-outlet />
     </div>
-  </div>
 
 </div>

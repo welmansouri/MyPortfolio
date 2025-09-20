@@ -1,6 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
 
+@theme {
+  --color-primary: #FF6B35;
+  --color-secondary: #004E89;
+  --color-bg: #F7F7F2;
+   --color-muted:#6B7280;
+  --color-text:#1A1A1A;
+  --color-card:#FFFFFF;
+}
+
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

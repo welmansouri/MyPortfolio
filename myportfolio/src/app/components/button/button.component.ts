@@ -12,6 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 export class ButtonComponent {
 
   @Input() text: string = '';
+  @Input() type: string = '';
   @Input() icon: string = '';
 
   @Output() actionHandler = new EventEmitter<void>();

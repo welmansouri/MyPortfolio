@@ -1,18 +1,22 @@
-<div class="sm:w-full fade-in-left">
+<div class="sm:w-full w-min-full fade-in-left">
 
-  <div class=" mb-4">
-    <div class="flex items-center mb-4">
-      <div class="inline-flex items-center justify-center p-2 text-[#6754CA] bg-white rounded-lg shadow">
-        <mat-icon fontSet="fa" fontIcon="fa-graduation-cap" class="text-xl"></mat-icon>
-      </div>
-      <p class="text-2xl ml-3 font-bold text-gray-800">Éducation</p>
+  <div class="grid grid-cols-1 w-min-full justify-center items-center">
+ 
+    <div class="justify-center items-center  ">
+      <div *ngFor="let value of educationValues" class="mx-auto my-auto justify-between space-y-10">
+        <div *ngIf="value.key % 2 ==0">      <app-resume-part  isRight="true"  [title]="value.title" [date]="value.date"  [subTitle]="value.subTitle" [text]="value.text" />
+</div>
+  <div  *ngIf="value.key % 2 !=0">      <app-resume-part isRight="false" [title]="value.title" [date]="value.date"  [subTitle]="value.subTitle" [text]="value.text" />
+</div>
     </div>
-    <div *ngFor="let value of educationValues">
-      <app-resume-part [title]="value.title" [subTitle]="value.subTitle" [text]="value.text" />
-    </div>
+   
+    
   </div>
 
-  <div class=" mb-4">
+
+
+
+  <!-- <div class=" mb-4">
     <div class="flex items-center mb-4">
       <div class="inline-flex items-center justify-center p-2 text-[#6754CA] bg-white rounded-lg shadow">
         <mat-icon fontSet="fa" fontIcon="fa-briefcase"  class="text-xl"></mat-icon>
@@ -22,11 +26,11 @@
     <div *ngFor="let value of experienceValues">
       <app-resume-part [title]="value.title" [subTitle]="value.subTitle" [text]="value.text" />
     </div>
-  </div>
+  </div> -->
 
 
 
-
+<!-- 
   <div class=" mb-4">
     <div class="flex items-center mb-4">
       <div class="inline-flex items-center justify-center p-2 text-[#6754CA] bg-white rounded-lg shadow">
@@ -41,5 +45,5 @@
 
 
 
-  <app-button text="Télécharger le CV" icon="download" (actionHandler)="download()"></app-button>
+  <app-button text="Télécharger le CV" icon="download" (actionHandler)="download()"></app-button> -->
 </div>

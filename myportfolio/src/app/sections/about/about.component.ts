@@ -5,19 +5,57 @@ import { CommonModule } from '@angular/common';
 import { ButtonComponent } from '../../components/button/button.component';
 import { SpacerComponent } from '../../components/spacer/spacer.component';
 import { PopupComponent } from '../../components/popup/popup.component';
+import { ResumeComponent } from '../resume/resume.component';
+export interface Skill {
+  name: string;        
+  techs: string[];    
+}
+
+
 @Component({
   selector: 'app-about',
-  imports: [TitleComponent, CardComponent, CommonModule, ButtonComponent, SpacerComponent, PopupComponent],
+  imports: [TitleComponent, CardComponent, CommonModule,ResumeComponent, ButtonComponent, SpacerComponent, PopupComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css'
 })
-
 export class AboutComponent {
 
   selectedTestimonial: any = null;
   showModal: boolean = false;
 
+  skills: Skill[] = [
+  {
+    name: "Programmation",
+    techs: ["img/tech/java.png", "img/tech/php.png","img/tech/js.png", "TypeScript"]
+  },
+  {
+    name: "Front-end & Mobile",
+    techs: ["img/tech/angular.png","img/tech/react.png", "img/techs/vue.svg", "img/tech/react-native.png", "Next.js", "Redux", "Tailwind", "Vuetify"]
+  },
+  {
+    name: "Back-end & Bases de données",
+    techs: [
+      "Spring Boot", "Spring Security", "Hibernate", "JPA",
+      "Microservices", "API REST", "Node.js",
+      "PostgreSQL", "MySQL", "MongoDB", "Supabase"
+    ]
+  },
+  {
+    name: "DevOps, Cloud & Qualité",
+    techs: [
+      "Docker", "Kubernetes", "Jenkins", "GitLab CI", "SonarQube",
+      "Maven", "Gradle", "Azure",
+      "img/techs/junit.svg", "JaCoCo", "TDD", "Clean Code",
+      "Jira (Agile/Scrum)", "Postman", "ELK", "Power BI"
+    ]
+  }
+];
   values: { title: string; text: string; icon: string }[] = [
+    {
+      title: 'Conception back-end',
+      text: 'Modélisation claire de la logique métier, structuration d’architectures évolutives et sécurisées, optimisation des accès aux données et des performances serveur.',
+      icon: 'fa-database'
+    },
     {
       title: 'Conception back-end',
       text: 'Modélisation claire de la logique métier, structuration d’architectures évolutives et sécurisées, optimisation des accès aux données et des performances serveur.',

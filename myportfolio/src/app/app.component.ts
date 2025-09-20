@@ -5,7 +5,6 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { TitleComponent } from './components/title/title.component';
 import {MatDividerModule} from '@angular/material/divider';
-
 interface Bubble {
   left: string;
   width: string;
@@ -26,10 +25,10 @@ export class AppComponent {
   activeLink='about';
   currentHeader = 'À propos';
   navigationLinks = [
-  { label: 'À propos', anchor: 'about' ,icon: 'fa-user'},
-  { label: 'Parcours', anchor: 'resume' ,icon:'fa-graduation-cap'},       
-  { label: 'Projets', anchor: 'portfolio' ,icon: 'fa-briefcase' },
-  { label: 'Contact', anchor: 'contact' ,icon:'fa-envelope'}
+  { label: 'À propos', anchor: 'about' ,icon: 'fa-user',type:'secondary'},
+  { label: 'Parcours', anchor: 'resume' ,icon:'fa-graduation-cap',type:'secondary'},       
+  { label: 'Projets', anchor: 'portfolio' ,icon: 'fa-briefcase' ,type:'secondary'},
+  { label: 'Contact', anchor: 'contact' ,icon:'fa-envelope',type:'primary'}
 ];
 
 
