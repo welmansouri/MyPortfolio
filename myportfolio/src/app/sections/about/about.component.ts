@@ -6,6 +6,8 @@ import { ButtonComponent } from '../../components/button/button.component';
 import { SpacerComponent } from '../../components/spacer/spacer.component';
 import { PopupComponent } from '../../components/popup/popup.component';
 import { ResumeComponent } from '../resume/resume.component';
+import { PortfolioComponent } from '../portfolio/portfolio.component';
+import { ContactComponent } from '../contact/contact.component';
 export interface Skill {
   name: string;        
   techs: string[];    
@@ -14,7 +16,7 @@ export interface Skill {
 
 @Component({
   selector: 'app-about',
-  imports: [TitleComponent, CardComponent, CommonModule,ResumeComponent, ButtonComponent, SpacerComponent, PopupComponent],
+  imports: [TitleComponent,ContactComponent, CardComponent, CommonModule,ResumeComponent, ButtonComponent, SpacerComponent, PopupComponent,PortfolioComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css'
 })
@@ -50,33 +52,34 @@ export class AboutComponent {
     ]
   }
 ];
-  values: { title: string; text: string; icon: string }[] = [
-    {
-      title: 'Conception back-end',
-      text: 'Modélisation claire de la logique métier, structuration d’architectures évolutives et sécurisées, optimisation des accès aux données et des performances serveur.',
-      icon: 'fa-database'
-    },
-    {
-      title: 'Conception back-end',
-      text: 'Modélisation claire de la logique métier, structuration d’architectures évolutives et sécurisées, optimisation des accès aux données et des performances serveur.',
-      icon: 'fa-database'
-    },
-    {
-      title: 'Développement front-end',
-      text: 'Création d’interfaces intuitives, accessibles et réactives. Attention portée à l’expérience utilisateur, à la maintenabilité du code et à la cohérence visuelle.',
-      icon: 'fa-desktop'
-    },
-    {
-      title: 'Déploiement & automatisation',
-      text: 'Mise en place de workflows de déploiement fluides, environnement de développement reproductible, gestion des versions et des livrables en continu.',
-      icon: 'fa-rocket'
-    },
-    {
-      title: 'Qualité & bonnes pratiques',
-      text: 'Application rigoureuse des principes de code propre (Clean Code, SOLID), couverture de tests, relecture systématique, documentation claire et collaboration active.',
-      icon: 'fa-check-circle'
-    }
-  ];
+values: { title: string; text: string; icon: string }[] = [
+  {
+    title: 'Expertise technique',
+    text: 'Maîtrise de différents environnements et frameworks, avec la capacité d’adapter la bonne technologie au bon projet.',
+    icon: 'fa-code'
+  },
+  {
+    title: 'Gestion des données',
+    text: 'Expérience solide dans la conception, la structuration et l’optimisation des bases de données pour garantir fiabilité et performance.',
+    icon: 'fa-database'
+  },
+  {
+    title: 'Déploiement & sécurité',
+    text: 'Mise en place de solutions stables, sécurisées et prêtes à évoluer, en respectant les bonnes pratiques de qualité et de fiabilité.',
+    icon: 'fa-shield-alt'
+  },
+  {
+    title: 'Veille technologique',
+    text: 'Toujours curieuse et en quête de nouveautés, j’aime explorer les tendances du digital pour rester à la pointe et enrichir mes pratiques.',
+    icon: 'fa-lightbulb'
+  },
+  {
+    title: 'Collaboration & agilité',
+    text: 'Habituée aux méthodes agiles, je valorise l’esprit d’équipe, la communication et l’intelligence collective pour mener les projets vers le succès.',
+    icon: 'fa-users'
+  }
+];
+
 
   techs: { title: string; url: string; }[] = [
     {

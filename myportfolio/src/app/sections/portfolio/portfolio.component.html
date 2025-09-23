@@ -1,28 +1,36 @@
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 justify-center">
-  <div>
-    <img mat-card-image src="img/portfolio/portfolio.png" alt="Profile Icon">
-  </div>
+<!-- WRAPPER : largeur stable -->
+<div class="w-full max-w-screen-xl mx-auto overflow-hidden shadow-2xl /50 bg-opacity-10 bg-bg  ">
+  <swiper-container class="mySwiper block w-full my-6" direction="horizontal" css-mode="false" loop="false"
+    navigation="true" pagination="true" slides-per-view="1" space-between="16" observe-parents="true"
+    observe-slide-children="true" update-on-window-resize="true" autoplay="true" style="width:100%; height:auto">
+    <ng-container *ngFor="let p of projects">
+      <swiper-slide class="!w-full min-w-0">
+        <article class="w-full min-w-0 rounded-xl p-6 overflow-hidden  ">
+          <img [src]="p.img" [alt]="p.title" class="contain-content p-auto m-auto object-cover" style="height:260px"
+            loading="lazy" decoding="async" />
+          <div class="p-5 min-w-0">
+            <p class="text-black font-bold text-xl  break-words">{{ p.title }}</p>
+            <p class="text-sm  text-muted opacity-90 whitespace-pre-line break-words">
+              {{ p.desc }}
+            </p>
+          </div>
+          <div class="w-full flex flex-row justify-center items-center gap-2">
+            <!-- Code GitHub -->
+            <ng-container *ngIf="isNonEmptyUrl(p.codeUrl) as codeUrl">
+              <app-button text="Voir le code sur GitHub" type="primary" icon="code" (actionHandler)="openUrl(p.codeUrl)">
+              </app-button>
+            </ng-container>
 
-  <div class="w-full bg-[#bebce0] p-5 bg-opacity-10 rounded-xl shadow-xl transform transition-transform duration-200 hover:scale-[1.04] flex flex-col justify-between h-full">
-    <div>
-      <div class="w-2/3 h-15 text-3xl font-bold text-[#6754CA] flex justify-start rounded-r-2xl mb-2 items-center">
-        <p>CV digital</p>
-      </div>
+            <!-- Démo live -->
+            <ng-container *ngIf="isNonEmptyUrl(p.demoUrl) as demoUrl">
+              <app-button text="Voir démo live" type="secondary" icon="send" (actionHandler)="openUrl(p.demoUrl)">
+              </app-button>
+            </ng-container>
+          </div>
 
-      <p>
-        Ce projet est une version digitalisée de mon CV présenté sous forme de portfolio interactif, développé
-        avec Angular et Tailwind CSS. Il met en avant mes compétences techniques, mes projets et permet aux
-        visiteurs de me contacter facilement ou de réserver un rendez-vous.
-      </p>
-    </div>
-    <div class="w-full">
 
-  <app-button
-    text="Voir le code sur GitHub"
-    icon="code"
-    (actionHandler)="openGithub()">
-  </app-button>
-  </div>
-
-  </div>
+        </article>
+      </swiper-slide>
+    </ng-container>
+  </swiper-container>
 </div>

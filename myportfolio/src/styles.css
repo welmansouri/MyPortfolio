@@ -1,5 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
+
 
 @theme {
   --color-primary: #FF6B35;
@@ -10,6 +14,11 @@
   --color-card:#FFFFFF;
 }
 
+.mySwiper {
+  --swiper-navigation-color: #004E89;   
+  --swiper-navigation-size: 26px;       
+  --swiper-pagination-color: #FF6B35;   
+}
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
