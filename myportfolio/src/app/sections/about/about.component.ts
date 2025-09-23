@@ -8,6 +8,8 @@ import { PopupComponent } from '../../components/popup/popup.component';
 import { ResumeComponent } from '../resume/resume.component';
 import { PortfolioComponent } from '../portfolio/portfolio.component';
 import { ContactComponent } from '../contact/contact.component';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+
 export interface Skill {
   name: string;        
   techs: string[];    
@@ -16,7 +18,9 @@ export interface Skill {
 
 @Component({
   selector: 'app-about',
-  imports: [TitleComponent,ContactComponent, CardComponent, CommonModule,ResumeComponent, ButtonComponent, SpacerComponent, PopupComponent,PortfolioComponent],
+    standalone: true,
+
+  imports: [TitleComponent,ContactComponent,TranslateModule, CardComponent, CommonModule,ResumeComponent, ButtonComponent, SpacerComponent, PopupComponent,PortfolioComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css'
 })
@@ -24,6 +28,8 @@ export class AboutComponent {
 
   selectedTestimonial: any = null;
   showModal: boolean = false;
+    constructor(private t: TranslateService) {}
+
 
   skills: Skill[] = [
   {

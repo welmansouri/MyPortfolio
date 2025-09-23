@@ -1,8 +1,8 @@
-<div class="flex w-full justify-between  min-h-dvh max-h-dvh   shadow-3xl">
+<div class="md:flex w-full justify-between  md:min-h-dvh md:max-h-dvh   shadow-3xl">
 
-  <div class="p-30 mt-20 w-1/2 h-full space-y-8 max-h-full min-h-full ">
+  <div class="md:p-30 md:mt-20 md:w-1/2 h-full  w-full p-4 space-y-8 max-h-full min-h-full ">
     <div class="rounded-3xl w-5/11 bg-secondary p-2 ">
-      <p>Disponible immédiatement</p>
+      <p>{{ 'portfolio.title' | translate }}</p>
     </div>
     <div class="text-3xl font-bold w-4/5">
       <p>Vous aimez l’informatique, l’ingénierie logicielle ou simplement l’innovation digitale ?</p>
@@ -10,7 +10,7 @@
     <div class="text-muted text-m ">
       <p>Alors bienvenue dans le monde de Wafae, où le code devient une aventure.</p>
     </div>
-    <div class="flex space-x-2">
+    <div class="md:flex space-x-2">
       <app-button text="Télécharger le CV (PDF)" type="primary" icon="send" (actionHandler)="download()">
       </app-button>
       <app-button text="Voir mes projets" type="secondary" icon="send" (actionHandler)="download()">
@@ -19,8 +19,8 @@
 
   </div>
 
-  <div class=" w-1/2 h-full">
-    <div class="p-10 items-end justify-end mt-20 w-1/2  h-full  max-h-full min-h-full ">
+  <div class="w-full hidden md:block md:w-1/2 ">
+    <div class="md:p-10  justify-center items-center md:mt-20   ">
             <img  src="img/profile/profile-Photoroom.png" alt="Profile Icon" >
 
     </div>
@@ -29,8 +29,8 @@
 </div>
 
 
-<div class="w-full bg-primary p-10">
-  <div class="mx-auto max-w-2/3 grid place-items-center gap-6 text-center">
+<div class="w-full bg-primary md:p-10 p-2">
+  <div class="mx-auto max-w-2/3 grid place-items-center md:gap-6 gap-2 text-center">
     <h2 class="font-bold text-2xl p-4">Qui suis-je ?</h2>
 
     <div class="font-light text-xl space-y-4 px-6 md:px-12">
@@ -66,12 +66,12 @@
 
 
 
-<div class="w-full  p-10">
+<div class="w-full  md:p-10 p-2">
   <div class="mx-auto grid place-items-center gap-6 text-center">
     <h2 class="font-bold text-2xl p-4">Mon expertise</h2>
 
 
-    <div class=" w-min-full grid grid-cols-1 md:grid-cols-5 gap-6 px-20">
+    <div class=" w-min-full grid grid-cols-1 md:grid-cols-5 gap-6 md:px-20 px-10">
       <div *ngFor="let value of values">
         <app-card [text]="value.text" [icon]="value.icon" [title]="value.title"></app-card>
       </div>
@@ -80,12 +80,12 @@
 </div>
 
 
-<div class="w-full  p-10">
+<div class="w-full  md:p-10 p-2">
   <div class="mx-auto grid place-items-center gap-6 text-center">
     <h2 class="font-bold text-2xl p-4">Mes compétences</h2>
 
 
-    <div class=" w-min-full grid grid-cols-1 md:grid-cols-4 gap-6 px-20">
+    <div class=" w-min-full grid grid-cols-1 md:grid-cols-4 gap-6 md:px-20 px-10">
       <div *ngFor="let value of skills">
         <app-card type="skills" [title]="value.name" [techs]="value.techs"></app-card>
       </div>
@@ -95,22 +95,26 @@
 
 
 
-<div class="w-full bg-primary p-10">
+<div class="w-full bg-primary md:p-10 p-2">
   <div class="mx-auto grid place-items-center gap-6 text-center">
     <h2 class="font-bold text-2xl p-4">Mon parcours</h2>
 
 
-    <div class=" w-min-full  px-20">
+    <div class=" w-min-full  md:px-20 px-2">
       <app-resume></app-resume>
     </div>
   </div>
 </div>
 
 
-<div class="w-full bg-bg p-10">
-  <div class="mx-auto max-w-2/3 grid place-items-center gap-6 text-center">
+<div class="w-full bg-bg md:p-10 p-2">
+  <div class="mx-auto grid place-items-center gap-6 text-center">
     <h2 class="font-bold text-2xl p-4">Mes projets</h2>
+        <div class=" w-min-full grid grid-cols-1  md:px-20 p-2">
+
     <app-portfolio></app-portfolio>
+        </div>
+
   </div>
 </div>
 
@@ -124,7 +128,7 @@
   </div>
 </div>
 
-<div class="w-full bg-bg p-10">
+<div class="w-full bg-bg md:p-10 p-2">
   <div class="mx-auto max-w-2/3 grid place-items-center gap-6 text-center">
     <h2 class="font-bold text-2xl p-4">Contact</h2>
     <app-contact></app-contact>

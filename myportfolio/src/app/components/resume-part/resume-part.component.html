@@ -1,26 +1,45 @@
-<div class="grid grid-cols-[1fr_160px_1fr] gap-x-6 space-y-10   relative ">
-  <div >
-    <div *ngIf="isRight === 'false'" class="text-right pr-2">
- <p class="text-black text-xl font-bold">{{ title }}</p>
-    <p class="text-[#6754CA]">{{ subTitle }}</p>
-    <p class="text-black">{{ text }}</p>
+<section class="relative">
+  <div class="pointer-events-none absolute md:left-1/2 md:-translate-x-1/2 translate-x-1/2  top-0 bottom-0 border-l-4 border-secondary"></div>
+
+  <div class="md:hidden grid grid-cols-[56px_1fr] items-start gap-3 ">
+    <div class="relative flex flex-col items-center">
+      <div class="z-10 w-12 h-12 rounded-full bg-bg border-2 border-secondary shadow grid place-items-center">
+        <span class="text-secondary text-xs font-bold">{{ date }}</span>
+      </div>
+      <div class="flex-1 w-0 border-l-4 border-secondary -mt-1"></div>
+    </div>
+
+    <div class="text-left">
+      <p class="text-black text-lg font-bold">{{ title }}</p>
+      <p class="text-[#6754CA]">{{ subTitle }}</p>
+      <p class="text-black">{{ text }}</p>
     </div>
   </div>
 
-  <div class="relative flex items-center justify-center">
-  <div class="absolute left-1/2 -translate-x-1/2 top-[-0px] bottom-[-40px] border-l-4 border-secondary"></div>
-  <div class="relative flex justify-center items-center z-10 w-40 h-40 rounded-full bg-bg border-2 border-secondary text-center shadow">
-    <p class="mx-auto px-auto text-secondary text-xl font-bold">{{ date }}</p>
-  </div>
-</div>
-
-
-  <div >
-    <div *ngIf="isRight === 'true'" class="text-left pl-2">
-    <p class="text-black text-xl font-bold">{{ title }}</p>
-    <p class="text-[#6754CA]">{{ subTitle }}</p>
-    <p class="text-black">{{ text }}</p>
+  <div class="hidden md:grid md:grid-cols-[1fr_160px_1fr] gap-x-6 gap-y-10 relative space-y-7">
+    <div>
+      <div *ngIf="isRight === 'false'" class="text-right pr-2">
+        <p class="text-black text-xl font-bold">{{ title }}</p>
+        <p class="text-[#6754CA]">{{ subTitle }}</p>
+        <p class="text-black">{{ text }}</p>
+      </div>
     </div>
 
+
+
+    <div class="relative flex items-center justify-center">
+      <div class="absolute left-1/2 -translate-x-1/2 border-l-4 border-secondary"></div>
+      <div class="relative z-10 w-40 h-40 rounded-full bg-bg border-2 border-secondary shadow grid place-items-center">
+        <p class="text-secondary text-xl font-bold">{{ date }}</p>
+      </div>
+    </div>
+
+    <div>
+      <div *ngIf="isRight === 'true'" class="text-left pl-2">
+        <p class="text-black text-xl font-bold">{{ title }}</p>
+        <p class="text-[#6754CA]">{{ subTitle }}</p>
+        <p class="text-black">{{ text }}</p>
+      </div>
+    </div>
   </div>
-</div>
+</section>

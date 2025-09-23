@@ -9,7 +9,7 @@
 </p>
 
   <app-spacer size="sm"></app-spacer>
-<div class="grid h-full  w-full grid-cols-2 gap-6 place-content-stretch">
+<div class="md:grid h-full space-y-6 flex-row  w-full md:grid-cols-2 md:gap-6 md:place-content-stretch">
   <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-6 h-max-3/5">
 
     <div class="md:flex md:flex-row gap-10">
@@ -52,11 +52,9 @@
       </button> -->
     </div>
   </form>
+  <div class="calendar-placeholder"></div>
+</div> 
 
  
 
-  <!-- Koalendar Inline Embed Start -->
-<div class="calendar-placeholder"></div>
-</div>  
-<!-- Koalendar Inline Embed End -->
 </div>
