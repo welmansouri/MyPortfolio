@@ -19,11 +19,13 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 <div class="w-full ">
-   <div class="md:p-2 shadow-md sticky top-0 backdrop-blur   z-30 ">
-      <app-toolbar [links]="navigationLinks"/>
+    
+   <div class=" sticky top-0 backdrop-blur bg-[var(--color-bg)]   z-30 ">
+      <app-toolbar [links]="navigationLinks" [currentLanguage]="currentLang"
+  (lang)="onLangChange($event)"/>
     </div>
     <div class="">
-      <router-outlet />
+      <router-outlet  />
     </div>
 
 </div>

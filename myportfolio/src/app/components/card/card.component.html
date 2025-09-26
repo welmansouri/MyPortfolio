@@ -1,15 +1,16 @@
 <div class="flex flex-wrap gap-4 h-full transform transition-transform duration-200   ">
   <div *ngIf="type != 'testimonials' && type != 'skills'"
-    class="h-full w-full bg-bg   bg-opacity-10 rounded-xl  shadow-xl /50 p-6 hover:scale-[1.04]">
+    class="h-full w-full bg-[var(--color-card)]  bg-opacity-10 rounded-xl dark:shadow-2xl /50  shadow-xl /50 p-6 hover:scale-[1.04]">
 
-    <div class="w-15 h-15 bg-primary justify-center items-center grid text-lg font-extrabold  text-bg rounded-full ">
+    <div
+      class="w-15 h-15 bg-[var(--color-primary)] text-white justify-center items-center grid text-lg font-extrabold  text-bg rounded-full ">
       <mat-icon fontSet="fas" [fontIcon]="icon"></mat-icon>
     </div>
     <div class="flex flex-col">
-      <div class="text-black font-bold text-xl">
+      <div class="text-[var(--color-text)] font-bold text-xl">
         {{ title }}
       </div>
-      <div class="text-sm  text-muted">
+      <div class="text-sm  text-[var(--color-muted)] ">
         {{ text }}
       </div>
     </div>
@@ -17,15 +18,17 @@
   </div>
 
 
-  <div *ngIf="type == 'skills'" class="h-full w-full bg-bg   bg-opacity-10 rounded-xl  shadow-xl /50 md:p-6">
+  <div *ngIf="type == 'skills'"
+    class="h-full w-full bg-[var(--color-card)] dark:shadow-2xl /50   bg-opacity-10 rounded-xl  shadow-xl /50 md:p-6">
     <div class="flex flex-col">
-      <div class="text-black font-bold text-xl">
+      <div class=" text-[var(--color-text)] pb-4 font-bold text-xl">
         {{ title }}
       </div>
       <div class="grid  grid-cols-2 mx-auto my-auto  space-x-2 space-y-2 justify-center items-center ">
         <div *ngFor="let value of techs">
-          <div class="flex justify-center hover:scale-[1.04] items-center md:w-20 md:h-20 w-15 h-15  text-center text-xl rounded-2xl shadow-xl ">
-                    <img mat-card-image [src]="value" [alt]="value">
+          <div
+            class="flex justify-center hover:scale-[1.04] items-center md:w-20 md:h-20 w-15 h-15  text-center text-xl rounded-2xl shadow-xl ">
+            <img mat-card-image [src]="value" [alt]="value">
 
           </div>
         </div>
@@ -36,10 +39,19 @@
 
 
   <div *ngIf="type == 'testimonials'"
-    class=" w-full bg-[#bebce0]   bg-opacity-10 rounded-xl  shadow-xl  /50 p-6  hover:border-[#230E91]  hover:border-2 transform transition-transform duration-200 hover:scale-[1.04] hover:cursor-pointer">
+    class=" w-full bg-[var(--color-secondary)]   bg-opacity-10 rounded-xl  shadow-xl  /50 p-6  hover:border-[#230E91]  hover:border-2 transform transition-transform duration-200 hover:scale-[1.04] hover:cursor-pointer">
+    <div
+      class="absolute inset-0 -z-10 bg-gradient-to-r from-[var(--color-primary)]/40 via-[var(--color-secondary)]/40 to-[var(--color-primary)]/40">
+    </div>
+
+    <!-- Cercles flous décoratifs -->
+    <div class="absolute top-0 left-0 w-72 h-72 bg-[var(--color-primary)] opacity-30 rounded-full blur-3xl -z-10"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-[var(--color-secondary)] opacity-30 rounded-full blur-3xl -z-10">
+    </div>
+
     <div class="flex flex-row ">
 
-      <div class=" w-15 h-15  grid font-extrabold  bg-white rounded-xl mr-4">
+      <div class=" w-15 h-15  grid font-extrabold  bg-[var(--color-card)] rounded-xl mr-4">
         <img mat-card-image [src]="icon" alt="Profile Icon">
       </div>
       <div class="flex flex-col">
@@ -53,7 +65,7 @@
     </div>
 
     <div>
-      <p class="line-clamp-2 overflow-hidden">
+      <p class="line-clamp-2 hover:line-clamp-100 overflow-hidden">
         {{ text }}
       </p>
     </div>

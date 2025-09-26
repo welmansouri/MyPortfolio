@@ -5,36 +5,53 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { TitleComponent } from './components/title/title.component';
 import {MatDividerModule} from '@angular/material/divider';
-interface Bubble {
-  left: string;
-  width: string;
-  height: string;
-  duration: string;
-}
+import { ThemeService } from './services/theme.service';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { Subscription } from 'rxjs';
+import {Navigation_Links} from './components/shared/constants'
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,CommonModule,ToolbarComponent,ProfileComponent,TitleComponent,MatDividerModule],
+  standalone:true,
+  imports: [RouterOutlet,TranslateModule,CommonModule,ToolbarComponent,ProfileComponent,TitleComponent,MatDividerModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-    bubbleArray: Bubble[] = [];
 
   title = 'myportfolio';
   activeLink='about';
   currentHeader = 'À propos';
-  navigationLinks = [
-  { label: 'À propos', anchor: 'about' ,icon: 'fa-user',type:'secondary'},
-  { label: 'Parcours', anchor: 'resume' ,icon:'fa-graduation-cap',type:'secondary'},       
-  { label: 'Projets', anchor: 'portfolio' ,icon: 'fa-briefcase' ,type:'secondary'},
-  { label: 'Contact', anchor: 'contact' ,icon:'fa-envelope',type:'primary'}
-];
+  currentLang: 'fr' | 'en' = 'fr';
+  private sub?: Subscription;
 
 
-constructor() {
-    this.generateBubbles();
+  navigationLinks = Navigation_Links;
+
+
+constructor(public t:TranslateService) {
+    const saved = (localStorage.getItem('lang') as 'fr'|'en'|null) ?? this.t.getBrowserLang() as any;
+    const initial = saved === 'en' ? 'en' : 'fr';
+    this.t.use(initial);
+    this.currentLang = initial;
+
+    this.sub = this.t.onLangChange.subscribe(e => {
+      this.currentLang = (e.lang === 'en' ? 'en' : 'fr');
+    });
   }
+ setLang(lang: 'fr'|'en') {
+    if (lang === this.currentLang) return;
+    this.currentLang=lang;
+    this.t.use(lang);
+    localStorage.setItem('lang', lang);
+  }
+ onLangChange(lang: 'fr'|'en') {
+    this.currentLang = lang;
+    this.t.use(lang);
+    localStorage.setItem('lang', lang);
+  }
+  ngOnDestroy() { this.sub?.unsubscribe(); }
 
   onHeaderChange(newHeader: string) {
     const tmp =this.navigationLinks.find(link => link.anchor === newHeader);
@@ -43,16 +60,7 @@ constructor() {
 }
 
 
-  generateBubbles() {
-    for (let i = 0; i < 30; i++) {
-      this.bubbleArray.push({
-        left: `${Math.random() * 100}%`,
-        width: `${Math.random() * 20 + 10}px`,
-        height: `${Math.random() * 20 + 10}px`,
-        duration: `${Math.random() * 5 + 5}s`,
-      });
-    }
-  }
+
 
   
 }

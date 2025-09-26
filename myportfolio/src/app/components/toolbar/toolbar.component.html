@@ -1,16 +1,75 @@
-<div class="flex justify-end items-center gap-4 ">
-  <nav *ngFor="let value of links" class="flex w-1/11 items-center justify-end">
-    <app-button
-      [text]="value.label"
-      [type]="value.type"
+<header class="sticky top-0 shadow-md  z-30 bg-[var(--color-bg)]/80 border-b border-[var(--color-border)]">
+  <div class="mx-auto  max-w-screen-xl ">
+    <div class="flex  h-auto items-center justify-between gap-4">
+      <a routerLink="/" class="flex   items-center gap-2 shrink-0 pl-2">
+        <img src="img/profile/logo.png" alt="Logo" class="h-[80px]  " />
+      </a>
 
-      icon="send"
-      (actionHandler)="setActiveLink(value.anchor)">
-    </app-button>
-  </nav>
-</div>
+      <div class="hidden md:flex  items-center gap-3">
+        <nav class="hidden md:flex items-center gap-2">
+          <app-button *ngFor="let value of links" [text]="value.label" [type]="value.type" icon="send"
+            (actionHandler)="scrollTo(value.anchor)">
+          </app-button>
+        </nav>
 
+        <div class="flex items-center gap-2">
+          <!-- Thème -->
+          <button type="button" (click)="toggleTheme()" class="h-9 w-9 grid place-items-center rounded-full border
+                   border-[var(--color-border)]
+                   bg-[var(--color-card)] text-[var(--color-text)]
+                   hover:shadow-card dark:hover:shadow-cardDark"
+            [attr.aria-label]="isDark ? 'Passer en clair' : 'Passer en sombre'">
+            <span *ngIf="!isDark">🌙</span>
+            <span *ngIf="isDark">☀️</span>
+          </button>
 
+<!-- 
+          <button type="button" (click)="toggleLang()" class="h-9 px-3 rounded-lg border
+                   border-[var(--color-border)]
+                   bg-[var(--color-card)] text-[var(--color-text)]
+                   hover:shadow-card dark:hover:shadow-cardDark">
+            {{ currentLanguage === 'fr' ? 'FR' : 'EN' }}
+          </button> -->
+        </div>
+      </div>
 
+      <!-- Mobile -->
+      <div class="md:hidden flex items-center gap-2 pr-2" >
+        <!-- Burger -->
+        <button (click)="isMenuOpen = !isMenuOpen" class="h-9 w-9 grid place-items-center rounded-full border
+                 border-[var(--color-border)]
+                 bg-[var(--color-card)] text-[var(--color-text)]">
+          <span *ngIf="!isMenuOpen">☰</span>
+          <span *ngIf="isMenuOpen">✕</span>
+        </button>
+      </div>
+      <!-- Mobile menu (dropdown/panel) -->
+      <div *ngIf="isMenuOpen" class="absolute top-16 right-0 z-50 flex w-4/5 min-h-svh  flex-col gap-3 p-4
+            rounded-xl shadow-xl bg-[var(--color-card)] border border-[var(--color-border)] md:hidden">
 
+        <nav class="flex flex-col gap-2">
+          <app-button *ngFor="let value of links" [text]="value.label" [type]="value.type" icon="send"
+            (actionHandler)="scrollTo(value.anchor); isMenuOpen=false">
+          </app-button>
+        </nav>
 
+        <div class="flex justify-between items-center gap-2 pt-2 border-t border-[var(--color-border)]">
+          <!-- Thème -->
+          <button type="button" (click)="toggleTheme()" class="h-9 w-9 grid place-items-center rounded-full border
+             border-[var(--color-border)]
+             bg-[var(--color-card)] text-[var(--color-text)]">
+            <span *ngIf="!isDark">🌙</span>
+            <span *ngIf="isDark">☀️</span>
+          </button>
+
+          <!-- Langue -->
+          <!-- <button type="button" (click)="toggleLang()" class="h-9 px-3 rounded-lg border
+             border-[var(--color-border)]
+             bg-[var(--color-card)] text-[var(--color-text)]">
+            {{ currentLanguage === 'fr' ? 'FR' : 'EN' }}
+          </button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
