@@ -29,7 +29,7 @@
   {
     "glob": "**/*",
     "input": "node_modules/devicon/icons",
-    "output": "/assets/img/tech/"
+    "output": "/assets/assets/img/tech/"
   }
 ]
 ,

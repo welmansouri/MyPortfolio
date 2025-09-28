@@ -23,23 +23,21 @@ export class PortfolioComponent {
   projects: Project[] = [
     {
       title: 'CV digital',
-      img: 'img/portfolio/portfolio.png',
+      img: '/assets/img/portfolio/portfoliocv.png',
       desc: `Ce projet est une version digitalisée de mon CV, présenté sous forme de portfolio interactif,
 développé avec Angular et Tailwind CSS. Il met en avant mes compétences techniques, mes projets et
 permet aux visiteurs de me contacter facilement ou de réserver un rendez-vous.`,
-      codeUrl: 'heheh',
-      demoUrl: "bbbb"
+      codeUrl: 'https://github.com/welmansouri/MyPortfolio',
     },
     {
-      title: 'Dashboard',
-      img: 'assets/img/portfolio/dashboard.png',
-      desc: 'Temps réel • Charts'
-    },
-    {
-      title: 'Réservation',
-      img: 'assets/img/portfolio/booking.png',
-      desc: 'Flutter • Stripe'
-    }
+      title: 'Coffee Connect',
+      img: '/assets/img/portfolio/coffe-connect.png',
+      desc: `Coffee-Connectest une application mobile innovante qui permet de gérer et personnaliser la distribution automatique de café directement depuis son smartphone. L’utilisateur peut choisir la taille, configurer ses préférences, payer et récupérer sa boisson en toute simplicité.
+Pensée pour l’avenir, la plateforme ne se limite pas seulement au café : elle ouvre la voie à la gestion connectée de tout type de distributeur automatique (snacks, boissons, produits divers), offrant une expérience fluide, moderne et 100 % mobile.`,
+      codeUrl: 'https://github.com/welmansouri/CoffeeConnect',
+      demoUrl:'https://appetize.io/app/b_w7uqkacrhgf4juuoh2ua6r2j3e',
+
+}
   ];
 
  isNonEmptyUrl(val: unknown): val is string {
