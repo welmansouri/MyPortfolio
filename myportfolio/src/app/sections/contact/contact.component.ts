@@ -60,11 +60,11 @@ export class ContactComponent {
       container.appendChild(widgetDiv);
     }
 
-    const existingScript = document.querySelector('script[src="https://koalendar.com/assets/widget.js"]');
+    const existingScript = document.querySelector('script[src="https://koalendar.comwidget.js"]');
 
     if (!existingScript) {
       const script = document.createElement('script');
-      script.src = 'https://koalendar.com/assets/widget.js';
+      script.src = 'https://koalendar.comwidget.js';
       script.async = true;
       script.onload = () => {
         (window as any).Koalendar?.('inline', {

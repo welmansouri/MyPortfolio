@@ -44,60 +44,60 @@ skills: Skill[] = [
   {
     name: "Programmation",
     techs: [
-      "/assets/img/icons/java/java-original.svg",
-      "/assets/img/icons/python/python-original.svg",
-      "/assets/img/icons/javascript/javascript-original.svg",
-      "/assets/img/icons/typescript/typescript-original.svg",
-      "/assets/img/icons/mysql/mysql-original.svg" 
+      "img/icons/java/java-original.svg",
+      "img/icons/python/python-original.svg",
+      "img/icons/javascript/javascript-original.svg",
+      "img/icons/typescript/typescript-original.svg",
+      "img/icons/mysql/mysql-original.svg" 
     ]
   },
   {
     name: "Front-end & Mobile",
     techs: [
-      "/assets/img/icons/angular/angular-original.svg",
-      "/assets/img/icons/vuejs/vuejs-original.svg",
-      // "/assets/img/icons/react/react-original.svg",    
-      "/assets/img/icons/nextjs/nextjs-original.svg",
-      "/assets/img/icons/redux/redux-original.svg",
-      "/assets/img/icons/tailwindcss/tailwindcss-original.svg",
-      "/assets/img/icons/vuetify/vuetify-original.svg"
+      "img/icons/angular/angular-original.svg",
+      "img/icons/vuejs/vuejs-original.svg",
+      // "img/icons/react/react-original.svg",    
+      "img/icons/nextjs/nextjs-original.svg",
+      "img/icons/redux/redux-original.svg",
+      "img/icons/tailwindcss/tailwindcss-original.svg",
+      "img/icons/vuetify/vuetify-original.svg"
     ]
   },
   {
     name: "Back-end & Bases de données",
     techs: [
-      "/assets/img/icons/spring/spring-original.svg",
-      "/assets/img/icons/hibernate/hibernate-original.svg",
-      "/assets/img/icons/nodejs/nodejs-original.svg",
-      "/assets/img/icons/postgresql/postgresql-original.svg",
-      "/assets/img/icons/mysql/mysql-original.svg",
-      "/assets/img/icons/mongodb/mongodb-original.svg",
-      //"/assets/img/icons/supabase/supabase-original.svg"
+      "img/icons/spring/spring-original.svg",
+      "img/icons/hibernate/hibernate-original.svg",
+      "img/icons/nodejs/nodejs-original.svg",
+      "img/icons/postgresql/postgresql-original.svg",
+      "img/icons/mysql/mysql-original.svg",
+      "img/icons/mongodb/mongodb-original.svg",
+      //"img/icons/supabase/supabase-original.svg"
     ]
   },
   {
     name: "DevOps, Cloud & Qualité",
     techs: [
-      "/assets/img/icons/gitlab/gitlab-original.svg",
-      "/assets/img/icons/kubernetes/kubernetes-plain.svg",
-      "/assets/img/icons/jenkins/jenkins-original.svg",
-      "/assets/img/icons/docker/docker-original.svg",
-      // "/assets/img/icons/sonarqube/sonarqube.svg",          // custom si pas dans devicon
-      "/assets/img/icons/maven/maven-original.svg",
-       "/assets/img/icons/tomcat/tomcat-original.svg",          
+      "img/icons/gitlab/gitlab-original.svg",
+      "img/icons/kubernetes/kubernetes-plain.svg",
+      "img/icons/jenkins/jenkins-original.svg",
+      "img/icons/docker/docker-original.svg",
+      // "img/icons/sonarqube/sonarqube.svg",          // custom si pas dans devicon
+      "img/icons/maven/maven-original.svg",
+       "img/icons/tomcat/tomcat-original.svg",          
 
-      "/assets/img/icons/gradle/gradle-original.svg",
-      "/assets/img/icons/azure/azure-original.svg",
-      "/assets/img/icons/junit/junit-original.svg",
-            "/assets/img/icons/jupyter/jupyter-original.svg",
+      "img/icons/gradle/gradle-original.svg",
+      "img/icons/azure/azure-original.svg",
+      "img/icons/junit/junit-original.svg",
+            "img/icons/jupyter/jupyter-original.svg",
 
-      // "/assets/img/icons/jacoco/jacoco.png",                // custom
-      "/assets/img/icons/jira/jira-original.svg",
-      "/assets/img/icons/postman/postman-original.svg",
-            "/assets/img/icons/wordpress/wordpress-original.svg",
+      // "img/icons/jacoco/jacoco.png",                // custom
+      "img/icons/jira/jira-original.svg",
+      "img/icons/postman/postman-original.svg",
+            "img/icons/wordpress/wordpress-original.svg",
 
-      "/assets/img/icons/kibana/kibana-original.svg",                  
-      // "/assets/img/icons/powerbi/powerbi.png"               // custom
+      "img/icons/kibana/kibana-original.svg",                  
+      // "img/icons/powerbi/powerbi.png"               // custom
     ]
   }
 ];
@@ -152,9 +152,9 @@ skills: Skill[] = [
     ];
 
     const sources = [
-      { src: '/assets/img/profile/p1.png', alt: 'p1' },
-      { src: '/assets/img/profile/p2.png', alt: 'p2' },
-      { src: '/assets/img/profile/p3.png', alt: 'p3' }
+      { src: 'img/profile/p1.png', alt: 'p1' },
+      { src: 'img/profile/p2.png', alt: 'p2' },
+      { src: 'img/profile/p3.png', alt: 'p3' }
     ];
 
     // Mélanger aléatoirement les positions

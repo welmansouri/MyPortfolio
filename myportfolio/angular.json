@@ -24,12 +24,12 @@
   {
     "glob": "**/*",
     "input": "public",
-    "output": "/assets/"
+    "output": ""
   },
   {
     "glob": "**/*",
     "input": "node_modules/devicon/icons",
-    "output": "/assets/assets/img/tech/"
+    "output": "assets/img/tech/"
   }
 ]
 ,
@@ -101,6 +101,9 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
