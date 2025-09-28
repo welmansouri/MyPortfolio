@@ -42,6 +42,13 @@ Pensée pour l’avenir, la plateforme ne se limite pas seulement au café : ell
       title: 'Assistant vocal mobile',
       img: 'img/portfolio/soup.png',
       desc: `L'application vise à piloter un lecteur de flux audio sous Android par la voix, dans le cadre d'un projet sur les architectures distribuées. L'objectif principal de cette application est de permettre aux utilisateurs d'interagir avec le lecteur en utilisant des commandes vocales formulées en langage naturel, sans contrainte sur la forme des messages. Par exemple, les utilisateurs pourront demander à l'application de lire des morceaux spécifiques en utilisant des instructions  telles que "Je veux écouter Hotel California".`,
+},
+ {
+      title: 'Lara Elec',
+      img: 'img/portfolio/lara-elec.png',
+      desc: `Création d’un site vitrine moderne et responsive pour Lara Elec, électricien à Avignon. Le projet met en valeur les services, réalisations et certifications de l’entreprise, tout en facilitant la demande de devis et le contact client.`,
+      demoUrl:'https://laraelec.com/',
+
 }
   ];
 
